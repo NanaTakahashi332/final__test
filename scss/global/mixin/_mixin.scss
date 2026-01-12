@@ -1,0 +1,278 @@
+@use "../setting" as s;
+
+@mixin container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin container_inline {
+  width: 90%;
+  text-align: center;
+}
+
+@mixin slick_slide_margin {
+  margin: 0 10px; // カードの左右に余白を入れる
+}
+
+@mixin container_narrow {
+  width: 60%;
+}
+
+@mixin fv_background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin font_PlayfairDisplay {
+  font-family: "Playfair Display", cursive;
+}
+
+@mixin font_GreatVibes {
+  font-family: "Great Vibes", cursive;
+}
+
+@mixin font_YuMincho {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", sans-serif;
+}
+
+@mixin fv_area_h2 {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+@mixin fv_area_button_photos {
+  display: block;
+  height: 3%;
+  margin: 0;
+  padding: 1rem 4rem;
+  border: 1.5px solid #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.5s ease-in-out;
+}
+
+@mixin fv_area_button_photos_before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to right, #8a2be2, #4682b4);
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@mixin fv_area_button_photos_hover_before {
+  opacity: 1;
+}
+
+@mixin photos_collection {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+@mixin photos_collectionslick-list {
+  overflow: visible;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+}
+
+@mixin photos_collectionslick-slide {
+  height: auto;
+  margin: 0 10px;
+}
+
+@mixin photos_collectionslick-dots {
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+@mixin photos_collectionslick-dots_li_button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+@mixin photos_collectionslick-dots_li_button_before {
+  color: #ccc;
+  opacity: 1;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+@mixin photos_collection_slick-prev_slick-next {
+  display: block !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+@mixin photos_collection_slick-prev_slick-next_before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin photos_collection_card {
+  display: block;
+  width: 100%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+@mixin photos_collection_card_img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+@mixin photos_collection_card_body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+@mixin photos_collection_card_title {
+  margin: 0 0 3rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@mixin photos_collection_card_text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+// 使う
+@mixin flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ここから追加
+@mixin viewbutton_a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px;
+  background: #252f66;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 1;
+}
+
+@mixin viewbutton_a_txt {
+  white-space: nowrap;
+}
+
+@mixin viewbutton_a_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  line-height: 1;
+  padding: 0.5rem;
+}
+
+// トップページセクションタイトル
+@mixin section_title {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin: 0;
+  // font-family: Barlow;を入れると壊れる
+}
+
+@mixin section_title_en {
+  font-size: 60px;
+  font-weight: 1000;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  // グラデーション
+  background: linear-gradient(90deg, #6ccee7 0%, #296aa2 55%, #252f66 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin section_title_jp {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #252f66;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+// 子ページ　セクションタイトル
+@mixin child_sec_title {
+  position: relative;
+  display: block;
+  margin-bottom: 3rem;
+  padding-bottom: 0.75rem;
+}
+
+@mixin child_sec_title_after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+}
+
+// 左側の濃い短い線（アクセント）
+@mixin child_sec_title_before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 260px; // 短い線の長さ
+  z-index: 1;
+}
