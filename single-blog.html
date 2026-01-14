@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>お問い合わせ</title>
+    <title>ブログ個別</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -32,7 +32,7 @@
     />
   </head>
 
-  <body class="page-contact">
+  <body class="page-blog_single">
     <!-- <div id="loading">
       <div id="loading_box">
         <div class="loading-one animation_loading">
@@ -98,90 +98,31 @@
     </header>
     <main>
       <article>
-        <section id="childpage_heading">
-          <div class="childpage_heading_container">
-            <div class="childpage_heading_container_description">
-              <h2>お問い合わせ</h2>
-              <p>
-                この度はNEXILLに関心をお寄せいただき、誠にありがとうございます。<br />お問い合わせ内容の確認後、担当者よりご連絡させていただきます。
-              </p>
-            </div>
-            <ul class="childpage_heading_container_pagelink">
-              <!-- <li><a href="#"></a></li>
-              <li><a href="#"></a></li> -->
-            </ul>
-          </div>
-        </section>
-        <section id="contact">
-          <div class="contact_container">
-            <div class="contact_form_item">
-              <p class="Form-Item-Label isMsg">
-                お問い合わせ内容<span class="Form-Item-Label-Required"
-                  >必須</span
-                >
-              </p>
-              <textarea class="Form-Item-Textarea-title"></textarea>
-            </div>
-            <div class="contact_form_item">
-              <p class="Form-Item-Label">会社・団体名</p>
-              <input
-                type="text"
-                class="Form-Item-Input"
-                placeholder="例）株式会社NEXILL"
-              />
-            </div>
-            <div class="contact_form_item">
-              <p class="Form-Item-Label">
-                お名前<span class="Form-Item-Label-Required">必須</span>
-              </p>
-              <input
-                type="text"
-                class="Form-Item-Input"
-                placeholder="例）山田太郎"
-              />
-            </div>
-            <div class="contact_form_item">
-              <p class="Form-Item-Label">
-                メールアドレス<span class="Form-Item-Label-Required">必須</span>
-              </p>
-              <input
-                type="email"
-                class="Form-Item-Input"
-                placeholder="例）example@gmail.com"
-              />
-            </div>
-            <div class="contact_form_item">
-              <p class="Form-Item-Label">
-                電話番号<span class="Form-Item-Label-Required">必須</span>
-              </p>
-              <input
-                type="tel"
-                class="Form-Item-Input"
-                placeholder="例）000-0000-0000"
-              />
-            </div>
-            <div class="contact_form_item">
-              <p class="Form-Item-Label isMsg">備考</p>
-              <textarea class="Form-Item-Textarea"></textarea>
-            </div>
-            <div class="contact_container_send">
-              <p>
-                プライバシーポリシーに同意のうえ、<br
-                  class="contact_sponly"
-                />送信するボタンをクリックしてください。
-              </p>
-              <label class="checkboxItem">
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  value="ポリシー"
-                  class="checkbox"
-                  checked
+        <section id="blog_single">
+          <div class="blog_single_container">
+            <header class="blog_single_header">
+              <figure class="blog_single_thumb">
+                <img
+                  src="./img/blog/blog_3.png"
+                  alt="プロが教えるデバッグの極意 エラーを味方につける思考法"
                 />
-                <a>プライバシーポリシー</a>に同意します。
-              </label>
-              <br />
-              <input type="submit" class="Form-Btn" value="送信する" />
+              </figure>
+              <h1 class="blog_single_title">
+                エンジニアが覚えておくべきエラー発生時の対応方法
+              </h1>
+              <time class="blog_single_date" datetime="2026-01-01"
+                >2026.01.01</time
+              >
+            </header>
+            <div class="blog_single_content">
+              <p>テキストが入ります。テキストが入ります。…</p>
+              <p>テキストが入ります。テキストが入ります。…</p>
+            </div>
+            <div class="blog_single_back">
+              <a class="btn_round" href="./blog-archive.html">
+                <span class="btn_round_txt">Back to List</span>
+                <span class="btn_round_icon" aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </section>

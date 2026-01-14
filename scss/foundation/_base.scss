@@ -1836,7 +1836,6 @@ a {
 
 // =====子ページ Contact お問い合わせ=====
 .page-contact {
-  // @include container
   .contact_container {
     @include container;
     margin-top: 4rem;
@@ -1870,7 +1869,7 @@ a {
       display: inline-block;
       text-align: center;
       background: $weak_gray;
-      color: #ffffff;
+      color: $white;
       font-size: 14px;
       color: red;
     }
@@ -1883,7 +1882,7 @@ a {
       height: 4rem;
       flex: 1;
       width: 100%;
-      background: #ffffff;
+      background: $white;
       font-size: 18px;
     }
 
@@ -1894,7 +1893,7 @@ a {
       padding: 1em;
       height: 4rem;
       flex: 1;
-      background: #ffffff;
+      background: $white;
       font-size: 18px;
     }
 
@@ -1905,28 +1904,8 @@ a {
       padding: 1em;
       height: 10rem;
       flex: 1;
-      background: #ffffff;
+      background: $white;
       font-size: 18px;
-    }
-
-    #contact_submit {
-      margin: 4rem 0;
-    }
-
-    #contact_submit .container {
-      text-align: center;
-    }
-
-    #contact_submit p {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    @media screen and (max-width: 480px) {
-      #contact_submit p {
-        /* text-align: left; */
-        margin-bottom: 1.5rem;
-      }
     }
 
     .contact_sponly {
@@ -1941,12 +1920,12 @@ a {
       padding: 1rem 3.5rem;
       letter-spacing: 0.05em;
       background: #001f42;
-      color: #ffffff;
+      color: $white;
       font-weight: bold;
       font-size: 16px;
       cursor: pointer;
       border: none;
-      border-radius: 50px;
+      border-radius: 10px;
       transition: 0.5s;
     }
 
@@ -1960,13 +1939,13 @@ a {
       position: relative;
       width: 2rem;
       height: 2rem;
-      border: 1px solid #001f42;
+      border: 1px solid $navy;
       border-radius: 2px;
       cursor: pointer;
     }
 
     .checkbox:checked {
-      background-color: #001f42;
+      background-color: $navy;
     }
 
     .checkbox:checked::after {
@@ -1976,8 +1955,8 @@ a {
       left: 8px;
       width: 12px;
       height: 6px;
-      border-bottom: 2px solid #ffffff;
-      border-left: 2px solid #ffffff;
+      border-bottom: 2px solid $white;
+      border-left: 2px solid $white;
       transform: rotate(-45deg);
     }
 
@@ -1986,424 +1965,111 @@ a {
       border-bottom: 1.5px solid #000080;
       color: #000080;
     }
-    // ここまでHP２の部分
+    .contact_container_send {
+      margin: 2rem 0;
+      text-align: center;
+      & p {
+        margin: 0.75rem 0;
+      }
+    }
   }
 }
 
-// 子ページ　Blog
-.body_blog {
-  display: block;
-  font-size: 16px;
-  @include mq(pc) {
-    font-size: 100%;
-  }
-  @include mq(tab) {
-    font-size: 60%;
-  }
-  @include mq(sp) {
-    font-size: 80%;
-  }
-  box-sizing: border-box;
-  color: $font_gray;
-  @include font_PlayfairDisplay;
-  main {
-    article {
-      header {
-        @include container;
-        @include flex_between;
-        padding: 1.5rem 0;
-        .header_wrap {
-          width: 35%;
-          margin: 0 0 0 auto;
-          display: block;
-          transition: all 0.5s ease-in-out;
-          @include mq(tab) {
-            width: 35%;
-          }
-          @include mq(sp) {
-            width: 50%;
-          }
-          .header_wrap_nav {
-            @include flex_between;
-            .header_wrap_nav_list {
-              display: inline-block;
-              margin: 0 0.25em;
-              @include mq(tab) {
-                font-size: 12px;
-              }
-              @include mq(sp) {
-                font-size: 10px;
-              }
-              .header_wrap_nav_list_a {
-                text-decoration: none;
-                color: $font_gray;
-                cursor: pointer;
-                transition: opacity 0.3s ease;
-                &:hover {
-                  opacity: 0.7;
-                  .blog_article_textbox p::after {
-                    transform: scale(1, 1);
-                  }
-                }
-              }
-            }
-          }
-        }
+// =====子ページ Blog(archive) ブログ=====
+.page-blog_archive {
+  #blog_archive {
+    padding: 3rem 0 5rem;
+
+    .blog_archive_container {
+      @include container;
+    }
+
+    .blog_archive_intro {
+      margin-bottom: 2.5rem;
+
+      p {
+        margin-top: 1.5rem;
+        line-height: 1.8;
+        color: $navy;
       }
-      #blog {
-        @include container;
+    }
+
+    .blog_cards {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .blog_card {
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .blog_card_link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .blog_card_thumb {
+      margin: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
         display: block;
-        color: $font_gray;
-        .page_heading {
-          margin: 3rem 0;
-          text-align: center;
-          font-size: 40px;
-          font-family: "Petit Formal Script", cursive;
-          // @include mq(tab) {
-          //   font-size: 24px;
-          // }
-          @include mq(sp) {
-            font-size: 20px;
-          }
-        }
-        .blog_article {
-          // @include flex_between;
-          margin-bottom: 5rem;
-          align-items: center;
-          a {
-            width: 100%;
-            @include flex_between;
-            align-items: center;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-            &:hover {
-              opacity: 0.7;
-              .blog_article_textbox p::after {
-                transform: scale(1, 1);
-              }
-            }
-            .blog_article_textbox {
-              width: 40%;
-              z-index: 2;
-              position: relative;
-              margin-right: -20%;
-              display: inline-block;
-              color: #000;
-              @include mq(sp) {
-                width: 60%;
-                margin-right: -40%;
-              }
-              h5 {
-                padding-bottom: 1rem;
-                // font-size: 68px;
-                font-size: 62px;
-                letter-spacing: 4px;
-                text-shadow: 2px 2px 3px #ffffff;
-                @include font_YuMincho;
-                @include mq(pc) {
-                  font-size: 42px;
-                }
-                @include mq(tab) {
-                  font-size: 24px;
-                }
-                @include mq(sp) {
-                  font-size: 20px;
-                  padding-bottom: 0.2rem;
-                }
-              }
-              p {
-                font-size: 30px;
-                @include font_YuMincho;
-                position: relative;
-                line-height: 34px;
-                @include mq(tab) {
-                  font-size: 20px;
-                }
-                @include mq(sp) {
-                  font-size: 16px;
-                }
-                &::after {
-                  content: "";
-                  position: absolute;
-                  left: 0;
-                  bottom: -4px; /* 文字からの距離 */
-                  width: 100%;
-                  height: 2px; /* 線の太さ */
-                  background-color: #333; /* 線の色 */
-                  /* 中央から伸びるアニメーションの準備 */
-                  transform: scale(0, 1);
-                  transform-origin: center top;
-                  transition: transform 0.3s;
-                }
-              }
-            }
-            .blog_article_img {
-              width: 75%;
-              z-index: 1;
-              position: relative;
-              img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-                vertical-align: bottom;
-              }
-            }
-          }
-        }
-        .blog_article_1 {
-          // @include flex_between;
-          margin-bottom: 5rem;
-          // align-items: center;
-          a {
-            width: 100%;
-            @include flex_between;
-            align-items: center;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-            &:hover {
-              opacity: 0.7;
-              .blog_article_textbox_1 p::after {
-                transform: scale(1, 1);
-              }
-            }
-            .blog_article_img_1 {
-              width: 75%;
-              z-index: 1;
-              position: relative;
-              img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-                vertical-align: bottom;
-              }
-            }
-            .blog_article_textbox_1 {
-              width: 40%;
-              z-index: 2;
-              position: relative;
-              margin-left: -20%;
-              text-align: right;
-              color: #000;
-              @include mq(sp) {
-                width: 60%;
-                margin-left: -40%;
-              }
-              h5 {
-                padding-bottom: 1rem;
-                // font-size: 68px;
-                font-size: 62px;
-                letter-spacing: 4px;
-                text-shadow: 2px 2px 3px #ffffff;
-                @include font_YuMincho;
-                @include mq(pc) {
-                  font-size: 42px;
-                }
-                @include mq(tab) {
-                  font-size: 24px;
-                }
-                @include mq(sp) {
-                  font-size: 20px;
-                  padding-bottom: 0.2rem;
-                }
-              }
-              p {
-                font-size: 30px;
-                @include font_YuMincho;
-                position: relative;
-                line-height: 34px;
-                @include mq(tab) {
-                  font-size: 20px;
-                }
-                @include mq(sp) {
-                  font-size: 16px;
-                }
-                &::after {
-                  content: "";
-                  position: absolute;
-                  left: 0;
-                  bottom: -4px; /* 文字からの距離 */
-                  width: 100%;
-                  height: 2px; /* 線の太さ */
-                  background-color: #333; /* 線の色 */
-                  /* 中央から伸びるアニメーションの準備 */
-                  transform: scale(0, 1);
-                  transform-origin: center top;
-                  transition: transform 0.3s;
-                }
-              }
-            }
-          }
-        }
+        object-fit: cover;
       }
     }
-    footer {
-      margin: 6rem 0 2rem;
-      color: $font_gray;
-      @include font_PlayfairDisplay;
-      text-align: center;
-      h6 {
-        @include mq(tab) {
-          font-size: 12px;
-        }
-        @include mq(sp) {
-          font-size: 10px;
-        }
+
+    .blog_card_body {
+      padding: 1rem 1rem 1.2rem;
+    }
+
+    .blog_card_title {
+      margin: 0 0 0.6rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: $navy;
+    }
+
+    .blog_card_date {
+      font-size: 0.9rem;
+      color: rgba(37, 47, 102, 0.6);
+    }
+
+    .blog_archive_more {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include mq(tab) {
+      .blog_cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
       }
+    }
+
+    @include mq(sp) {
+      .blog_cards {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+    .viewbutton {
+      display: flex;
+      justify-content: center;
     }
   }
 }
 
-// 子ページ　Blog-detail
-.body_blog-detail {
-  display: block;
-  font-size: 16px;
-  @include mq(pc) {
-    font-size: 100%;
-  }
-  @include mq(tab) {
-    font-size: 60%;
-  }
-  @include mq(sp) {
-    font-size: 80%;
-  }
-  box-sizing: border-box;
-  color: $font_gray;
-  @include font_PlayfairDisplay;
-  main {
-    article {
-      header {
-        @include container;
-        @include flex_between;
-        padding: 1.5rem 0;
-        // box-sizing: border-box;
-        .header_wrap {
-          width: 35%;
-          margin: 0 0 0 auto;
-          display: block;
-          transition: all 0.5s ease-in-out;
-          // box-sizing: border-box;
-          @include mq(tab) {
-            width: 35%;
-          }
-          @include mq(sp) {
-            width: 50%;
-          }
-          .header_wrap_nav {
-            @include flex_between;
-            .header_wrap_nav_list {
-              display: inline-block;
-              margin: 0 0.25em;
-              @include mq(tab) {
-                font-size: 12px;
-              }
-              @include mq(sp) {
-                font-size: 10px;
-              }
-              .header_wrap_nav_list_a {
-                text-decoration: none;
-                color: $font_gray;
-                cursor: pointer;
-                opacity: 0.7;
-                .blog_article_textbox p::after {
-                  transform: scale(1, 1);
-                }
-              }
-            }
-          }
-        }
-      }
-      #blog-detail {
-        width: 70%;
-        margin: 0 auto;
-        @include font_YuMincho;
-        img {
-          width: 100%;
-        }
-        h3 {
-          margin: 1rem 0 2rem;
-          font-size: 30px;
-          line-height: 38px;
-          @include mq(tab) {
-            font-size: 24px;
-          }
-          @include mq(sp) {
-            font-size: 20px;
-          }
-        }
-        p {
-          line-height: 24px;
-        }
-        .blog-detail_page {
-          width: 60%;
-          margin: 6rem auto 8rem;
-          // @include flex_between;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          color: #000;
-          @include mq(sp) {
-            margin: 3rem auto 4rem;
-          }
-          .blog-detail_page_group {
-            @include flex_between;
-            flex: 1; // ★左右を同じ“枠幅”にする
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            &:first-child {
-              // ★左側グループ
-              justify-content: flex-start;
-            }
-            &:last-child {
-              // ★右側グループ
-              justify-content: flex-end;
-            }
-            p {
-              padding: 0 0.25rem;
-              font-size: 16px;
-              cursor: pointer;
-              @include mq(tab) {
-                font-size: 16px;
-              }
-              @include mq(sp) {
-                font-size: 12px;
-                justify-content: center;
-                align-items: center;
-              }
-            }
-          }
-        }
-        .blog-detail_page_blog {
-          flex: 0 0 auto;
-          text-align: center;
-          @include mq(tab) {
-            font-size: 20px;
-          }
-          @include mq(sp) {
-            font-size: 16px;
-          }
-          a {
-            text-decoration: none;
-            cursor: pointer;
-            color: #000;
-          }
-        }
-      }
-    }
-    footer {
-      margin: 6rem 0 2rem;
-      color: $font_gray;
-      @include font_PlayfairDisplay;
-      text-align: center;
-      h6 {
-        @include mq(tab) {
-          font-size: 12px;
-        }
-        @include mq(sp) {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-}
+// =====子ページ Blog(single) ブログ個別記事=====

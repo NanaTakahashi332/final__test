@@ -2292,22 +2292,6 @@ a {
   background: #ffffff;
   font-size: 18px;
 }
-.page-contact .contact_container #contact_submit {
-  margin: 4rem 0;
-}
-.page-contact .contact_container #contact_submit .container {
-  text-align: center;
-}
-.page-contact .contact_container #contact_submit p {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-@media screen and (max-width: 480px) {
-  .page-contact .contact_container #contact_submit p {
-    /* text-align: left; */
-    margin-bottom: 1.5rem;
-  }
-}
 .page-contact .contact_container .contact_sponly {
   display: none;
 }
@@ -2324,7 +2308,7 @@ a {
   font-size: 16px;
   cursor: pointer;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 0.5s;
 }
 .page-contact .contact_container .Form-Btn:hover {
@@ -2336,12 +2320,12 @@ a {
   position: relative;
   width: 2rem;
   height: 2rem;
-  border: 1px solid #001f42;
+  border: 1px solid #252f66;
   border-radius: 2px;
   cursor: pointer;
 }
 .page-contact .contact_container .checkbox:checked {
-  background-color: #001f42;
+  background-color: #252f66;
 }
 .page-contact .contact_container .checkbox:checked::after {
   content: "";
@@ -2359,484 +2343,90 @@ a {
   border-bottom: 1.5px solid #000080;
   color: #000080;
 }
-
-.body_blog {
-  display: block;
-  font-size: 16px;
-}
-@media screen and (max-width: 1024px) {
-  .body_blog {
-    font-size: 100%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .body_blog {
-    font-size: 60%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog {
-    font-size: 80%;
-  }
-}
-.body_blog {
-  box-sizing: border-box;
-  color: #333333;
-  font-family: "Playfair Display", cursive;
-}
-.body_blog main article header {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 0;
-}
-.body_blog main article header .header_wrap {
-  width: 35%;
-  margin: 0 0 0 auto;
-  display: block;
-  transition: all 0.5s ease-in-out;
-}
-@media screen and (max-width: 768px) {
-  .body_blog main article header .header_wrap {
-    width: 35%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article header .header_wrap {
-    width: 50%;
-  }
-}
-.body_blog main article header .header_wrap .header_wrap_nav {
-  display: flex;
-  justify-content: space-between;
-}
-.body_blog main article header .header_wrap .header_wrap_nav .header_wrap_nav_list {
-  display: inline-block;
-  margin: 0 0.25em;
-}
-@media screen and (max-width: 768px) {
-  .body_blog main article header .header_wrap .header_wrap_nav .header_wrap_nav_list {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article header .header_wrap .header_wrap_nav .header_wrap_nav_list {
-    font-size: 10px;
-  }
-}
-.body_blog main article header .header_wrap .header_wrap_nav .header_wrap_nav_list .header_wrap_nav_list_a {
-  text-decoration: none;
-  color: #333333;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-.body_blog main article header .header_wrap .header_wrap_nav .header_wrap_nav_list .header_wrap_nav_list_a:hover {
-  opacity: 0.7;
-}
-.body_blog main article header .header_wrap .header_wrap_nav .header_wrap_nav_list .header_wrap_nav_list_a:hover .blog_article_textbox p::after {
-  transform: scale(1, 1);
-}
-.body_blog main article #blog {
-  width: 90%;
-  margin: 0 auto;
-  display: block;
-  color: #333333;
-}
-.body_blog main article #blog .page_heading {
-  margin: 3rem 0;
-  text-align: center;
-  font-size: 40px;
-  font-family: "Petit Formal Script", cursive;
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .page_heading {
-    font-size: 20px;
-  }
-}
-.body_blog main article #blog .blog_article {
-  margin-bottom: 5rem;
-  align-items: center;
-}
-.body_blog main article #blog .blog_article a {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.body_blog main article #blog .blog_article a:hover {
-  opacity: 0.7;
-}
-.body_blog main article #blog .blog_article a:hover .blog_article_textbox p::after {
-  transform: scale(1, 1);
-}
-.body_blog main article #blog .blog_article a .blog_article_textbox {
-  width: 40%;
-  z-index: 2;
-  position: relative;
-  margin-right: -20%;
-  display: inline-block;
-  color: #000;
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .blog_article a .blog_article_textbox {
-    width: 60%;
-    margin-right: -40%;
-  }
-}
-.body_blog main article #blog .blog_article a .blog_article_textbox h5 {
-  padding-bottom: 1rem;
-  font-size: 62px;
-  letter-spacing: 4px;
-  text-shadow: 2px 2px 3px #ffffff;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", sans-serif;
-}
-@media screen and (max-width: 1024px) {
-  .body_blog main article #blog .blog_article a .blog_article_textbox h5 {
-    font-size: 42px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .body_blog main article #blog .blog_article a .blog_article_textbox h5 {
-    font-size: 24px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .blog_article a .blog_article_textbox h5 {
-    font-size: 20px;
-    padding-bottom: 0.2rem;
-  }
-}
-.body_blog main article #blog .blog_article a .blog_article_textbox p {
-  font-size: 30px;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", sans-serif;
-  position: relative;
-  line-height: 34px;
-}
-@media screen and (max-width: 768px) {
-  .body_blog main article #blog .blog_article a .blog_article_textbox p {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .blog_article a .blog_article_textbox p {
-    font-size: 16px;
-  }
-}
-.body_blog main article #blog .blog_article a .blog_article_textbox p::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px; /* 文字からの距離 */
-  width: 100%;
-  height: 2px; /* 線の太さ */
-  background-color: #333; /* 線の色 */
-  /* 中央から伸びるアニメーションの準備 */
-  transform: scale(0, 1);
-  transform-origin: center top;
-  transition: transform 0.3s;
-}
-.body_blog main article #blog .blog_article a .blog_article_img {
-  width: 75%;
-  z-index: 1;
-  position: relative;
-}
-.body_blog main article #blog .blog_article a .blog_article_img img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  vertical-align: bottom;
-}
-.body_blog main article #blog .blog_article_1 {
-  margin-bottom: 5rem;
-}
-.body_blog main article #blog .blog_article_1 a {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.body_blog main article #blog .blog_article_1 a:hover {
-  opacity: 0.7;
-}
-.body_blog main article #blog .blog_article_1 a:hover .blog_article_textbox_1 p::after {
-  transform: scale(1, 1);
-}
-.body_blog main article #blog .blog_article_1 a .blog_article_img_1 {
-  width: 75%;
-  z-index: 1;
-  position: relative;
-}
-.body_blog main article #blog .blog_article_1 a .blog_article_img_1 img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  vertical-align: bottom;
-}
-.body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 {
-  width: 40%;
-  z-index: 2;
-  position: relative;
-  margin-left: -20%;
-  text-align: right;
-  color: #000;
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 {
-    width: 60%;
-    margin-left: -40%;
-  }
-}
-.body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 h5 {
-  padding-bottom: 1rem;
-  font-size: 62px;
-  letter-spacing: 4px;
-  text-shadow: 2px 2px 3px #ffffff;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", sans-serif;
-}
-@media screen and (max-width: 1024px) {
-  .body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 h5 {
-    font-size: 42px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 h5 {
-    font-size: 24px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 h5 {
-    font-size: 20px;
-    padding-bottom: 0.2rem;
-  }
-}
-.body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 p {
-  font-size: 30px;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", sans-serif;
-  position: relative;
-  line-height: 34px;
-}
-@media screen and (max-width: 768px) {
-  .body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 p {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 p {
-    font-size: 16px;
-  }
-}
-.body_blog main article #blog .blog_article_1 a .blog_article_textbox_1 p::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px; /* 文字からの距離 */
-  width: 100%;
-  height: 2px; /* 線の太さ */
-  background-color: #333; /* 線の色 */
-  /* 中央から伸びるアニメーションの準備 */
-  transform: scale(0, 1);
-  transform-origin: center top;
-  transition: transform 0.3s;
-}
-.body_blog main footer {
-  margin: 6rem 0 2rem;
-  color: #333333;
-  font-family: "Playfair Display", cursive;
+.page-contact .contact_container .contact_container_send {
+  margin: 2rem 0;
   text-align: center;
 }
-@media screen and (max-width: 768px) {
-  .body_blog main footer h6 {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog main footer h6 {
-    font-size: 10px;
-  }
+.page-contact .contact_container .contact_container_send p {
+  margin: 0.75rem 0;
 }
 
-.body_blog-detail {
-  display: block;
-  font-size: 16px;
+.page-blog_archive #blog_archive {
+  padding: 3rem 0 5rem;
 }
-@media screen and (max-width: 1024px) {
-  .body_blog-detail {
-    font-size: 100%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .body_blog-detail {
-    font-size: 60%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog-detail {
-    font-size: 80%;
-  }
-}
-.body_blog-detail {
-  box-sizing: border-box;
-  color: #333333;
-  font-family: "Playfair Display", cursive;
-}
-.body_blog-detail main article header {
+.page-blog_archive #blog_archive .blog_archive_container {
   width: 90%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 0;
 }
-.body_blog-detail main article header .header_wrap {
-  width: 35%;
-  margin: 0 0 0 auto;
+.page-blog_archive #blog_archive .blog_archive_intro {
+  margin-bottom: 2.5rem;
+}
+.page-blog_archive #blog_archive .blog_archive_intro p {
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  color: #252f66;
+}
+.page-blog_archive #blog_archive .blog_cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.page-blog_archive #blog_archive .blog_card {
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.page-blog_archive #blog_archive .blog_card_link {
   display: block;
-  transition: all 0.5s ease-in-out;
-}
-@media screen and (max-width: 768px) {
-  .body_blog-detail main article header .header_wrap {
-    width: 35%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog-detail main article header .header_wrap {
-    width: 50%;
-  }
-}
-.body_blog-detail main article header .header_wrap .header_wrap_nav {
-  display: flex;
-  justify-content: space-between;
-}
-.body_blog-detail main article header .header_wrap .header_wrap_nav .header_wrap_nav_list {
-  display: inline-block;
-  margin: 0 0.25em;
-}
-@media screen and (max-width: 768px) {
-  .body_blog-detail main article header .header_wrap .header_wrap_nav .header_wrap_nav_list {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog-detail main article header .header_wrap .header_wrap_nav .header_wrap_nav_list {
-    font-size: 10px;
-  }
-}
-.body_blog-detail main article header .header_wrap .header_wrap_nav .header_wrap_nav_list .header_wrap_nav_list_a {
   text-decoration: none;
-  color: #333333;
-  cursor: pointer;
-  opacity: 0.7;
+  color: inherit;
 }
-.body_blog-detail main article header .header_wrap .header_wrap_nav .header_wrap_nav_list .header_wrap_nav_list_a .blog_article_textbox p::after {
-  transform: scale(1, 1);
-}
-.body_blog-detail main article #blog-detail {
-  width: 70%;
-  margin: 0 auto;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", sans-serif;
-}
-.body_blog-detail main article #blog-detail img {
+.page-blog_archive #blog_archive .blog_card_thumb {
+  margin: 0;
   width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
 }
-.body_blog-detail main article #blog-detail h3 {
-  margin: 1rem 0 2rem;
-  font-size: 30px;
-  line-height: 38px;
+.page-blog_archive #blog_archive .blog_card_thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
-@media screen and (max-width: 768px) {
-  .body_blog-detail main article #blog-detail h3 {
-    font-size: 24px;
-  }
+.page-blog_archive #blog_archive .blog_card_body {
+  padding: 1rem 1rem 1.2rem;
 }
-@media screen and (max-width: 480px) {
-  .body_blog-detail main article #blog-detail h3 {
-    font-size: 20px;
-  }
+.page-blog_archive #blog_archive .blog_card_title {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #252f66;
 }
-.body_blog-detail main article #blog-detail p {
-  line-height: 24px;
+.page-blog_archive #blog_archive .blog_card_date {
+  font-size: 0.9rem;
+  color: rgba(37, 47, 102, 0.6);
 }
-.body_blog-detail main article #blog-detail .blog-detail_page {
-  width: 60%;
-  margin: 6rem auto 8rem;
+.page-blog_archive #blog_archive .blog_archive_more {
+  margin-top: 2.5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 20px;
-  color: #000;
 }
-@media screen and (max-width: 480px) {
-  .body_blog-detail main article #blog-detail .blog-detail_page {
-    margin: 3rem auto 4rem;
+@media screen and (max-width: 768px) {
+  .page-blog_archive #blog_archive .blog_cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
-.body_blog-detail main article #blog-detail .blog-detail_page .blog-detail_page_group {
+@media screen and (max-width: 480px) {
+  .page-blog_archive #blog_archive .blog_cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+.page-blog_archive #blog_archive .viewbutton {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.body_blog-detail main article #blog-detail .blog-detail_page .blog-detail_page_group:first-child {
-  justify-content: flex-start;
-}
-.body_blog-detail main article #blog-detail .blog-detail_page .blog-detail_page_group:last-child {
-  justify-content: flex-end;
-}
-.body_blog-detail main article #blog-detail .blog-detail_page .blog-detail_page_group p {
-  padding: 0 0.25rem;
-  font-size: 16px;
-  cursor: pointer;
-}
-@media screen and (max-width: 768px) {
-  .body_blog-detail main article #blog-detail .blog-detail_page .blog-detail_page_group p {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog-detail main article #blog-detail .blog-detail_page .blog-detail_page_group p {
-    font-size: 12px;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.body_blog-detail main article #blog-detail .blog-detail_page_blog {
-  flex: 0 0 auto;
-  text-align: center;
-}
-@media screen and (max-width: 768px) {
-  .body_blog-detail main article #blog-detail .blog-detail_page_blog {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog-detail main article #blog-detail .blog-detail_page_blog {
-    font-size: 16px;
-  }
-}
-.body_blog-detail main article #blog-detail .blog-detail_page_blog a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #000;
-}
-.body_blog-detail main footer {
-  margin: 6rem 0 2rem;
-  color: #333333;
-  font-family: "Playfair Display", cursive;
-  text-align: center;
-}
-@media screen and (max-width: 768px) {
-  .body_blog-detail main footer h6 {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .body_blog-detail main footer h6 {
-    font-size: 10px;
-  }
+  justify-content: center;
 }
