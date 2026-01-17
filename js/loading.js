@@ -1,12 +1,8 @@
-window.addEventListener("load", function () {
-  const loader = document.getElementById("loading");
+window.addEventListener("load", () => {
+  const loading = document.getElementById("loading");
+  if (!loading) return;
 
-  // ローディングを表示しておく時間（ミリ秒）
-  const DURATION = 12000; 
-
-  setTimeout(function () {
-    if (loader) {
-      loader.classList.add("is-hidden");
-    }
-  }, DURATION);
+  setTimeout(() => {
+    loading.classList.add("is-hidden");
+  }, 1000); // ← 1秒
 });
