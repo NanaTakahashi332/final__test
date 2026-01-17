@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-// 使う
 @mixin flex_between {
   display: flex;
   justify-content: space-between;
@@ -22,7 +21,6 @@
   align-items: center;
 }
 
-// ここから追加
 @mixin viewbutton_a {
   padding: 0.5rem 1.5rem;
   border-radius: 40px;
@@ -35,7 +33,11 @@
   text-decoration: none;
   font-size: 20px;
   line-height: 1;
-  // @include hover_fade_bg($navy, 14%, 0.4s);
+}
+
+@mixin viewbutton_a_tabsize {
+  padding: 0.5rem 1.5rem;
+  font-size: 16px;
 }
 
 @mixin viewbutton_a_txt {
@@ -43,14 +45,23 @@
 }
 
 @mixin viewbutton_a_icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   border: 1.5px solid #fff;
   display: grid;
   place-items: center;
-  font-size: 26px;
+  // font-size: 26px;
+  font-size: 1.4rem;
   line-height: 1;
+  padding: 0.75rem;
+}
+
+@mixin viewbutton_a_icon_tabsize {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #fff;
+  font-size: 1.2rem;
   padding: 0.5rem;
 }
 
@@ -64,7 +75,7 @@
 }
 
 @mixin section_title_en {
-  font-size: 60px;
+  font-size: 90px;
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1;

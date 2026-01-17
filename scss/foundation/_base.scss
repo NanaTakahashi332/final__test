@@ -4,6 +4,7 @@
 // スムーススクロール
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 // aタグ
@@ -104,13 +105,30 @@ body {
   background: $navy;
   opacity: 0.8;
   z-index: 10000;
+  @include mq(tab) {
+    width: 80px;
+    height: 80px;
+  }
+  @include mq(sp) {
+    width: 70px;
+    height: 70px;
+  }
 }
+
 #page_top a {
   position: relative;
   display: block;
   width: 100px;
   height: 100px;
   text-decoration: none;
+  @include mq(tab) {
+    width: 80px;
+    height: 80px;
+  }
+  @include mq(sp) {
+    width: 70px;
+    height: 70px;
+  }
 }
 #page_top a::before {
   font-family: "Font Awesome 5 Free";
@@ -127,6 +145,16 @@ body {
   left: 0;
   margin: auto;
   text-align: center;
+  @include mq(tab) {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  @include mq(sp) {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+  }
 }
 
 // ヘッダー
@@ -154,6 +182,9 @@ header {
     position: relative;
     .title {
       width: 12.5%;
+      @include mq(tab) {
+        width: 20%;
+      }
       a {
         img {
           width: 100%;
@@ -161,15 +192,17 @@ header {
       }
     }
     .header_wrap {
-      width: 70%;
+      width: 75%;
       display: block;
       transition: all 0.5s ease-in-out;
       text-align: center;
       @include mq(pc) {
+        width: 100%;
         display: block;
+        font-size: 12px;
       }
       @include mq(tab) {
-        display: block;
+        display: none;
       }
       @include mq(sp) {
         display: none;
@@ -213,19 +246,15 @@ header {
           background-color: $bright_blue;
           color: $white;
           border-radius: 40px;
-
           display: inline-flex;
           align-items: center;
           justify-content: center;
-
           border: 1.5px solid transparent; // ← 通常時から“枠の幅”を確保（ガタつき防止）
           transition: background-color 0.4s ease, color 0.4s ease,
             border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
-
           &::after {
             content: none;
           }
-
           &:hover {
             background-color: $white;
             color: $bright_blue;
@@ -251,11 +280,14 @@ header {
     @include mq(pc) {
       display: none;
     }
+    @include mq(tab) {
+      display: block;
+    }
     @include mq(sp) {
       display: block;
     }
     & span {
-      @include mq(sp) {
+      @include mq(tab) {
         display: inline-block;
         transition: all 0.4s;
         position: absolute;
@@ -295,12 +327,29 @@ header {
     @include mq(pc) {
       display: none;
     }
+    @include mq(tab) {
+      display: block;
+    }
     @include mq(sp) {
       display: block;
     }
   }
   #h-nav {
     display: none;
+    @include mq(tab) {
+      display: block;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      right: 0;
+      width: 75%;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
+      background-color: #ccc;
+      transform: translateX(100%);
+      transition: transform 0.5s ease;
+    }
     @include mq(sp) {
       display: block;
       position: fixed;
@@ -337,6 +386,10 @@ header {
     }
   }
   #h-nav.panelactive {
+    @include mq(tab) {
+      transform: translateX(0);
+      background-color: #ccc;
+    }
     @include mq(sp) {
       transform: translateX(0);
       background-color: #ccc;
@@ -365,6 +418,9 @@ footer {
     justify-content: space-between;
     gap: 6%;
     padding-bottom: 3rem;
+    @include mq(pc) {
+      display: block;
+    }
     @include mq(sp) {
       display: block;
       padding-bottom: 2rem;
@@ -373,9 +429,14 @@ footer {
   // フッター左ブロック
   .footer_container_leftgroup {
     width: 28%;
-    @include mq(sp) {
+    @include mq(tab) {
+      display: block;
       width: 100%;
-      margin-bottom: 2rem;
+    }
+    @include mq(sp) {
+      display: block;
+      padding-bottom: 2rem;
+      width: 100%;
     }
     img {
       max-width: 180px;
@@ -394,12 +455,19 @@ footer {
       margin-top: 1.6rem;
       display: flex;
       gap: 1rem;
+      @include mq(pc) {
+        margin: 0 0 2rem 0;
+      }
       img {
         width: 36px;
         height: 36px;
         object-fit: contain;
         margin: 0;
         cursor: pointer;
+        @include mq(sp) {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
   }
@@ -410,7 +478,10 @@ footer {
     grid-template-columns: repeat(3, minmax(160px, 1fr));
     column-gap: 3.5rem;
     row-gap: 2.5rem;
-    @include mq(sp) {
+    @include mq(pc) {
+      width: 100%;
+    }
+    @include mq(tab) {
       width: 100%;
       grid-template-columns: repeat(2, minmax(140px, 1fr));
       column-gap: 2rem;
@@ -430,6 +501,9 @@ footer {
       display: inline-block;
       position: relative;
       padding-bottom: 0.25rem;
+      @include mq(tab) {
+        font-size: 16px;
+      }
     }
     a:hover {
       opacity: 1;
@@ -464,6 +538,9 @@ footer {
       font-size: 0.95rem;
       letter-spacing: 0.03em;
       opacity: 1;
+      @include mq(tab) {
+        font-size: 14px;
+      }
     }
     a:hover {
       opacity: 1;
@@ -489,6 +566,9 @@ footer {
       opacity: 0.85;
       display: inline-block;
       margin-bottom: 0.6rem;
+      @include mq(tab) {
+        font-size: 12px;
+      }
     }
     a:hover {
       opacity: 1;
@@ -507,6 +587,9 @@ footer {
       }
       & h6 {
         font-weight: lighter;
+        @include mq(tab) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -518,6 +601,12 @@ footer {
   font-size: 40px;
   font-weight: 900;
   color: $navy;
+  @include mq(tab) {
+    font-size: 34px;
+  }
+  @include mq(sp) {
+    font-size: 28px;
+  }
   &::after {
     @include child_sec_title_after;
     background: $weak_gray;
@@ -541,24 +630,47 @@ footer {
     @include flex_between;
     @include container;
     padding: 4rem 0;
+    @include mq(tab) {
+      display: block;
+    }
     .childpage_heading_container_description {
-      width: 75%;
+      width: 70%;
+      @include mq(tab) {
+        width: 100%;
+      }
       & h2 {
         @include section_title_en;
         margin-bottom: 2rem;
-        font-size: 50px;
+        font-size: 60px;
+        font-weight: 800;
+        @include mq(tab) {
+          font-size: 50px;
+        }
+        @include mq(sp) {
+          font-size: 40px;
+        }
       }
       & p {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.8;
         color: $navy;
+        @include mq(pc) {
+          font-size: 18px;
+        }
+        @include mq(tab) {
+          font-size: 16px;
+        }
       }
     }
     .childpage_heading_container_pagelink {
-      width: 15%;
+      width: 24%;
       margin: 0;
       padding: 0;
       list-style: none;
+      @include mq(tab) {
+        margin-top: 4rem;
+        width: 100%;
+      }
       & li {
         & a {
           display: inline-block;
@@ -569,6 +681,12 @@ footer {
           position: relative;
           display: inline-block;
           margin-bottom: 0.5rem;
+          @include mq(pc) {
+            font-size: 16px;
+          }
+          @include mq(tab) {
+            font-size: 16px;
+          }
           &::after {
             content: "";
             position: absolute;
@@ -597,6 +715,9 @@ footer {
 .viewbutton_a {
   @include viewbutton_a;
   transition: background-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  @include mq(tab) {
+    @include viewbutton_a_tabsize;
+  }
 }
 .viewbutton_a:hover {
   background-color: mix(white, #252f66, 14%);
@@ -608,6 +729,9 @@ footer {
 }
 .viewbutton_a .icon {
   @include viewbutton_a_icon;
+  @include mq(tab) {
+    @include viewbutton_a_icon_tabsize;
+  }
 }
 
 // フェードインアニメーションの設定
@@ -698,29 +822,57 @@ footer {
         background-repeat: no-repeat;
         background-image: url("../img/top/fv.png");
         color: $white;
-        @include mq(sp) {
-          margin-bottom: 4rem;
-        }
         .fv_group {
           @include container;
           h1 {
             padding: 16rem 0 1rem;
-            font-size: 50px;
-            line-height: 60px;
+            font-size: 60px;
+            line-height: 1.5;
             letter-spacing: 0.1em;
             text-shadow: 7px 9px 15px #777777;
+            @include mq(pc) {
+              font-size: 50px;
+            }
+            @include mq(tab) {
+              font-size: 42px;
+            }
+            @include mq(sp) {
+              padding: 12rem 0 1rem;
+              font-size: 30px;
+            }
+            .fv_group_sponly {
+              display: none;
+              @include mq(tab) {
+                display: block;
+              }
+            }
           }
           h2 {
             padding-bottom: 8rem;
             font-size: 20px;
             font-weight: lighter;
+            @include mq(tab) {
+              font-size: 18px;
+            }
+            @include mq(sp) {
+              font-size: 16px;
+            }
           }
           .fv_group_cta {
-            width: 50%;
-            @include flex_between;
-            gap: 1rem;
+            width: 67.5%;
+            // @include flex_between;
+            @include flex_center;
+            justify-content: flex-start;
+            gap: 2rem;
             margin-left: 0;
             font-size: 28px;
+            @include mq(pc) {
+              width: 100%;
+              display: block;
+            }
+            @include mq(tab) {
+              width: 100%;
+            }
             h3 {
               padding: 0;
               background: none;
@@ -736,9 +888,17 @@ footer {
               border-radius: 40px;
               box-shadow: 7px 9px 15px -5px #777777;
               font-size: 26px;
-              border: 1.5px solid transparent; // 枠幅確して、ホバーでガタつかないようにする
+              border: 1.5px solid transparent; // 枠幅を確保して、ホバーでガタつかないようにする
               transition: background-color 0.4s ease, color 0.4s ease,
                 border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+              @include mq(pc) {
+                font-size: 22px;
+                margin-top: 2rem;
+              }
+              @include mq(tab) {
+                font-size: 20px;
+                padding: 1rem 2rem;
+              }
               &:hover {
                 opacity: 1;
               }
@@ -765,19 +925,27 @@ footer {
           }
         }
       }
-
       #top_company {
         background-color: $weak_bright_blue;
-        @include mq(sp) {
-          margin-bottom: 4rem;
-        }
         .top_company_group {
           padding: 4rem 0 2rem;
           @include container;
           @include flex_between;
-          gap: 2%;
+          gap: 5%;
+          @include mq(pc) {
+            gap: 5%;
+          }
+          @include mq(tab) {
+            display: block;
+          }
           .top_company_group_left {
             width: 60%;
+            @include mq(pc) {
+              width: 50%;
+            }
+            @include mq(tab) {
+              width: 100%;
+            }
             & h4 {
               margin-bottom: 4rem;
               color: $navy;
@@ -785,6 +953,7 @@ footer {
               line-height: 1.5;
               @include mq(tab) {
                 font-size: 20px;
+                margin-bottom: 1rem;
               }
               @include mq(sp) {
                 font-size: 18px;
@@ -803,6 +972,9 @@ footer {
           .top_company_group_right {
             line-height: 1.5;
             font-size: 18px;
+            @include mq(tab) {
+              margin-top: 2rem;
+            }
             .top_company_group_right_p {
               margin-bottom: 2rem;
             }
@@ -810,10 +982,10 @@ footer {
               font-size: 100%;
             }
             @include mq(tab) {
-              font-size: 60%;
+              font-size: 14px;
             }
             @include mq(sp) {
-              font-size: 80%;
+              font-size: 10px;
             }
           }
         }
@@ -829,16 +1001,19 @@ footer {
             padding-left: 20px;
             color: $white;
             line-height: 1.5;
+            @include mq(tab) {
+              font-size: 60px;
+            }
+            @include mq(sp) {
+              font-size: 40px;
+            }
           }
-
           .top_company_loopwrapper_text:nth-child(odd) {
             animation: loop 50s -25s linear infinite;
           }
-
           .top_company_loopwrapper_text:nth-child(even) {
             animation: loop2 50s linear infinite;
           }
-
           @keyframes loop {
             0% {
               transform: translateX(100%);
@@ -859,32 +1034,47 @@ footer {
       }
       // =====トップページ  services 事業内容=====
       #top_services {
-        $divider-h: 110px;
+        --divider-h: 110px; /* V字の深さ */
+        --pad-top: 4rem;
+        --pad-bottom: 8rem; /* V字の手前の余白 */
         width: 100%;
         background-color: $weak_bright_blue;
         box-sizing: border-box;
-        padding: 4rem 0 calc(8rem + #{$divider-h});
         position: relative;
-        @include mq(sp) {
-          text-align: left;
-          margin-bottom: 4rem;
-          padding-top: 0;
-        }
+        padding: var(--pad-top) 0 calc(var(--pad-bottom) + var(--divider-h));
         // bottomのセクション区切り
         clip-path: polygon(
           0 0,
           100% 0,
-          100% calc(100% - #{$divider-h}),
+          100% calc(100% - var(--divider-h)),
           50% 100%,
-          0 calc(100% - #{$divider-h})
+          0 calc(100% - var(--divider-h))
         );
         // V字で切られる部分
-        padding-bottom: calc(8rem + #{$divider-h});
+        @include mq(tab) {
+          --divider-h: 70px;
+          --pad-bottom: 4rem;
+        }
+        @include mq(sp) {
+          --divider-h: 50px;
+          --pad-top: 0rem;
+          --pad-bottom: 3rem;
+          padding-top: 3rem;
+        }
         .sec-title {
           @include section_title;
           @include container;
           .sec-title__en {
             @include section_title_en;
+            @include mq(pc) {
+              font-size: 80px;
+            }
+            @include mq(pc) {
+              font-size: 70px;
+            }
+            @include mq(sp) {
+              font-size: 50px;
+            }
           }
           .sec-title__jp {
             @include section_title_jp;
@@ -894,8 +1084,9 @@ footer {
           margin-top: 2rem;
           @include flex_between;
           gap: 5%;
-          @include mq(sp) {
+          @include mq(tab) {
             display: block;
+            margin: 0 auto;
           }
           .vision_title_sp {
             display: none;
@@ -907,14 +1098,23 @@ footer {
           .top_services_group_leftbox {
             width: 25%;
             margin-left: 5%;
-            .top_services_viewbutton_a {
-              @include viewbutton_a;
+            @include mq(tab) {
+              width: 90%;
+              box-sizing: border-box;
             }
-            .top_services_viewbutton_a .txt {
-              @include viewbutton_a_txt;
-            }
-            .top_services_viewbutton_a .icon {
-              @include viewbutton_a_icon;
+            .top_services_viewbutton {
+              @include mq(tab) {
+                margin-top: 2rem;
+              }
+              .top_services_viewbutton_a {
+                @include viewbutton_a;
+              }
+              .top_services_viewbutton_a .txt {
+                @include viewbutton_a_txt;
+              }
+              .top_services_viewbutton_a .icon {
+                @include viewbutton_a_icon;
+              }
             }
           }
           .top_services_group_rightbox {
@@ -929,6 +1129,11 @@ footer {
             border-bottom-left-radius: 20px;
             padding: 5%;
             box-sizing: border-box;
+            @include mq(tab) {
+              width: 90%;
+              margin: 2rem auto 0;
+              border-radius: 20px;
+            }
             .top_services_group_rightbox_item {
               /* 画像→見出し→本文の間を整える */
               display: grid;
@@ -937,6 +1142,10 @@ footer {
               padding: 0 2rem;
               margin-right: 5%;
               box-sizing: border-box;
+              @include mq(tab) {
+                margin-right: 0;
+                padding: 0;
+              }
               .top_services_group_rightbox_item_img {
                 width: 100%;
                 box-sizing: border-box;
@@ -953,11 +1162,17 @@ footer {
               }
               .top_services_group_rightbox_item_heading {
                 margin: 0.4rem 0 0;
-                font-size: 1.55rem;
+                font-size: 30px;
                 font-weight: 800;
                 color: $blue;
                 letter-spacing: 0.02em;
                 line-height: 1.2;
+                @include mq(tab) {
+                  font-size: 26px;
+                }
+                @include mq(sp) {
+                  font-size: 24px;
+                }
               }
               .top_services_group_rightbox_item_txt {
                 margin: 0;
@@ -975,13 +1190,20 @@ footer {
         @include container;
         padding-top: 4rem;
         color: $font_basic;
-        @include mq(sp) {
-          margin: 2rem auto;
-        }
+        box-sizing: border-box;
         .sec-title {
           @include section_title;
           .sec-title__en {
             @include section_title_en;
+            @include mq(pc) {
+              font-size: 80px;
+            }
+            @include mq(pc) {
+              font-size: 70px;
+            }
+            @include mq(sp) {
+              font-size: 50px;
+            }
           }
           .sec-title__jp {
             @include section_title_jp;
@@ -990,6 +1212,9 @@ footer {
         .top_works_mainitem {
           margin: 4rem 0 3rem;
           transition: opacity 0.4s ease, transform 0.4s ease;
+          @include mq(tab) {
+            width: 100%;
+          }
           &:hover {
             opacity: 0.85;
             transform: translateY(-2px);
@@ -1001,13 +1226,19 @@ footer {
             text-decoration: none;
             color: inherit;
             transition: opacity 0.4s ease, transform 0.4s ease;
+            @include mq(tab) {
+              display: block;
+            }
             a:hover {
               opacity: 0.85;
               transform: translateY(-2px);
             }
 
             .top_works_mainitem_img {
-              width: 52.5%;
+              width: 100%;
+              @include mq(tab) {
+                width: 100%;
+              }
               img {
                 width: 100%;
                 object-fit: cover;
@@ -1015,9 +1246,18 @@ footer {
             }
             .top_works_mainitem_txtgroup {
               width: 45%;
+              @include mq(tab) {
+                width: 100%;
+              }
               & h4 {
                 font-size: 30px;
                 line-height: 1.5;
+                @include mq(tab) {
+                  font-size: 20px;
+                }
+                @include mq(sp) {
+                  font-size: 14px;
+                }
               }
               .tag {
                 display: inline-block;
@@ -1034,9 +1274,16 @@ footer {
           @include flex_between;
           gap: 2%;
           margin-bottom: 3rem;
+          @include mq(tab) {
+            display: block;
+          }
           .top_works_others_item {
             width: 30%;
             transition: opacity 0.4s ease, transform 0.4s ease;
+            @include mq(tab) {
+              width: 100%;
+              margin: 3rem 0;
+            }
             &:hover {
               opacity: 0.85;
               transform: translateY(-2px);
@@ -1059,6 +1306,12 @@ footer {
               .top_works_others_item_txtgroup {
                 font-size: 20px;
                 line-height: 1.5;
+                @include mq(tab) {
+                  font-size: 16px;
+                }
+                @include mq(sp) {
+                  font-size: 14px;
+                }
               }
               .tag {
                 display: inline-block;
@@ -1090,29 +1343,45 @@ footer {
         padding-top: 4rem;
         color: $font_basic;
         @include mq(sp) {
-          width: 90%;
+          margin-top: 4rem;
         }
         .top_news_headinggroup {
           @include flex_between;
           margin-bottom: 3rem;
+          @include mq(tab) {
+            display: block;
+            margin-bottom: 1.5rem;
+          }
           .sec-title {
             @include section_title;
             .sec-title__en {
               @include section_title_en;
+              @include mq(pc) {
+                font-size: 80px;
+              }
+              @include mq(tab) {
+                font-size: 70px;
+              }
+              @include mq(sp) {
+                font-size: 50px;
+              }
             }
             .sec-title__jp {
               @include section_title_jp;
             }
           }
         }
-        .top_news_viewbutton_a {
-          @include viewbutton_a;
-        }
-        .top_news_viewbutton_a .txt {
-          @include viewbutton_a_txt;
-        }
-        .top_news_viewbutton_a .icon {
-          @include viewbutton_a_icon;
+        .top_news_viewbutton {
+          margin: 2rem 0 0 0;
+          .top_news_viewbutton_a {
+            @include viewbutton_a;
+          }
+          .top_news_viewbutton_a .txt {
+            @include viewbutton_a_txt;
+          }
+          .top_news_viewbutton_a .icon {
+            @include viewbutton_a_icon;
+          }
         }
         .top_news_list {
           margin: 0;
@@ -1121,13 +1390,21 @@ footer {
             border-bottom: 2px solid rgba(37, 47, 102, 0.35);
             .top_news_list_item_link {
               display: grid;
-              grid-template-columns: 220px 160px 1fr; /* 日付 / カテゴリ / タイトル */
+              grid-template-columns: 120px 150px 1fr; /* 日付 / カテゴリ / タイトル */
               align-items: center;
               gap: 2rem;
               padding: 1.4rem 0.5rem;
               text-decoration: none;
               color: inherit;
               transition: background-color 0.2s ease, transform 0.2s ease;
+              @include mq(tab) {
+                grid-template-columns: auto auto 1fr; // date / cat / (余り)
+                grid-template-areas:
+                  "date cat ."
+                  "title title title";
+                column-gap: 0.75rem;
+                row-gap: 0.75rem;
+              }
               &:hover {
                 background-color: rgba(108, 206, 231, 0.12);
               }
@@ -1155,10 +1432,18 @@ footer {
                 color: $font_basic;
                 font-size: 18px;
                 line-height: 1.5;
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
                 /* タイトルが長い時に1行で省略する */
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                // white-space: nowrap;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+                @include mq(tab) {
+                  grid-area: title;
+                  width: 100%;
+                  justify-self: stretch;
+                }
               }
               .news_body {
                 & p {
@@ -1183,14 +1468,29 @@ footer {
         .top_career_group {
           @include container;
           @include flex_between;
+          @include mq(tab) {
+            display: block;
+          }
           .sec-title-white {
             @include section_title;
+            @include mq(tab) {
+              margin-bottom: 1.5rem;
+            }
             .sec-title-white__en {
               @include section_title_en;
               font-weight: 1000;
               letter-spacing: 0.02em;
               line-height: 1;
               color: $white;
+              @include mq(pc) {
+                font-size: 80px;
+              }
+              @include mq(pc) {
+                font-size: 70px;
+              }
+              @include mq(sp) {
+                font-size: 50px;
+              }
             }
             .sec-title-white__jp {
               @include section_title_jp;
@@ -1213,6 +1513,12 @@ footer {
           color: $white;
           font-size: 20px;
           line-height: 1.5;
+          @include mq(tab) {
+            width: 90%;
+            margin: 2rem auto 0;
+            padding-left: 0;
+            font-size: 16px;
+          }
         }
         .marquee-right {
           overflow: hidden;
@@ -1229,6 +1535,12 @@ footer {
               aspect-ratio: 3/ 4;
               overflow: hidden;
               border-radius: 10px;
+              @include mq(pc) {
+                width: calc(80vw / 3 - 10px);
+              }
+              @include mq(tab) {
+                width: calc(100vw / 3 - 10px);
+              }
               & img {
                 display: block;
                 width: 100%;
@@ -1252,9 +1564,15 @@ footer {
         @include container;
         @include flex_between;
         padding: 4rem 0;
+        @include mq(tab) {
+          display: block;
+        }
         .top_panel_a {
           display: block;
           width: 47.5%;
+          @include mq(tab) {
+            width: 100%;
+          }
           .top_panel_a_item {
             position: relative;
             background: $bright_blue;
@@ -1263,6 +1581,9 @@ footer {
             box-sizing: border-box;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
             overflow: hidden;
+            @include mq(tab) {
+              margin-top: 2rem;
+            }
             &::before {
               content: "";
               position: absolute;
@@ -1308,10 +1629,21 @@ footer {
             .sec-title-white {
               @include section_title;
               margin: 0 0 2rem;
+              @include mq(pc) {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+              }
               .sec-title-white__en {
                 @include section_title_en;
                 color: $white;
                 font-size: 60px;
+                @include mq(pc) {
+                  font-size: 50px;
+                }
+                @include mq(sp) {
+                  font-size: 40px;
+                }
               }
               .sec-title-white__jp {
                 @include section_title_jp;
@@ -1325,6 +1657,9 @@ footer {
               font-size: 1rem;
               line-height: 1.7;
               opacity: 0.95;
+              @include mq(tab) {
+                margin-bottom: 0;
+              }
             }
             .top_panel_a_item_arrow {
               position: absolute;
@@ -1374,6 +1709,12 @@ footer {
           padding-left: 20px;
           color: $weak_gray;
           line-height: 1.5;
+          @include mq(tab) {
+            font-size: 60px;
+          }
+          @include mq(sp) {
+            font-size: 40px;
+          }
         }
         .top_panel_loopwrapper_text:nth-child(odd) {
           animation: loop 50s -25s linear infinite;
@@ -1423,25 +1764,14 @@ footer {
         @include container;
         @include section_top;
         .company_mission_container {
-          .child_sec_title {
-            @include child_sec_title;
-            font-size: 40px;
-            font-weight: 900;
-            color: $navy;
-            &::after {
-              @include child_sec_title_after;
-              background: $weak_gray;
-            }
-            &::before {
-              @include child_sec_title_before;
-              background: $bright_blue;
-            }
-          }
           .company_mission_group {
             background-color: $weak_blue;
             margin-bottom: 3rem;
             padding: 4rem;
             border-radius: 40px;
+            @include mq(sp) {
+              padding: 2rem;
+            }
             h4 {
               margin: 0 0 1.25rem;
               display: grid;
@@ -1463,23 +1793,53 @@ footer {
               margin-top: 2rem;
               width: 100%;
               box-sizing: border-box;
+              @include mq(tab) {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                  "title"
+                  "image"
+                  "text";
+                gap: 1.25rem;
+                width: 100%;
+              }
+              @include mq(sp) {
+                gap: 1rem;
+              }
               .company_mission_container_group_inner_txt {
                 width: 55%;
+                @include mq(tab) {
+                  width: 100%;
+                  display: contents;
+                }
                 & h5 {
                   margin-bottom: 2rem;
                   font-size: 24px;
                   font-weight: 800;
                   color: $navy;
+                  @include mq(tab) {
+                    grid-area: title;
+                    margin-bottom: 0;
+                  }
+                  @include mq(sp) {
+                    font-size: 20px;
+                  }
                 }
                 & p {
                   font-size: 16px;
                   line-height: 1.75;
+                  @include mq(tab) {
+                    grid-area: text;
+                  }
                 }
               }
               .company_mission_container_group_inner_img {
                 width: 40%;
                 overflow: hidden;
                 border-radius: 10px;
+                @include mq(tab) {
+                  width: 100%;
+                }
                 & img {
                   width: 100%;
                   object-fit: cover;
@@ -1493,25 +1853,17 @@ footer {
       #company_message {
         @include container;
         @include section_top;
-        .child_sec_title {
-          @include child_sec_title;
-          font-size: 40px;
-          font-weight: 900;
-          color: $navy;
-          &::after {
-            @include child_sec_title_after;
-            background: $weak_gray;
-          }
-          &::before {
-            @include child_sec_title_before;
-            background: $bright_blue;
-          }
-        }
         .company_message_container {
           @include flex_between;
           gap: 5%;
+          @include mq(tab) {
+            display: block;
+          }
           .company_message_container_img {
             width: 45%;
+            @include mq(tab) {
+              width: 100%;
+            }
             & img {
               width: 100%;
               object-fit: cover;
@@ -1521,15 +1873,31 @@ footer {
           }
           .company_message_container_txt {
             width: 50%;
+            @include mq(tab) {
+              width: 100%;
+              margin-top: 2.5rem;
+            }
             & p {
               margin-bottom: 1.5rem;
               font-size: 18px;
               line-height: 1.5;
+              @include mq(tab) {
+                font-size: 14px;
+              }
+              @include mq(sp) {
+                font-size: 12px;
+              }
             }
             & h6 {
               margin-top: 4rem;
               font-size: 20px;
               text-align: right;
+              @include mq(tab) {
+                font-size: 16px;
+              }
+              @include mq(sp) {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -1537,25 +1905,18 @@ footer {
       #company_about {
         @include container;
         @include section_top;
-        .child_sec_title {
-          @include child_sec_title;
-          font-size: 40px;
-          font-weight: 900;
-          color: $navy;
-          &::after {
-            @include child_sec_title_after;
-            background: $weak_gray;
-          }
-          &::before {
-            @include child_sec_title_before;
-            background: $bright_blue;
-          }
-        }
         dl {
           display: flex;
           flex-wrap: wrap;
           width: 100%;
           font-size: 18px;
+          line-height: 1.5;
+          @include mq(tab) {
+            font-size: 14px;
+          }
+          @include mq(sp) {
+            font-size: 12px;
+          }
           dt {
             width: 30%;
             padding-bottom: 20px;
@@ -1576,18 +1937,37 @@ footer {
         .company_accessmap_container {
           @include flex_between;
           gap: 3%;
+          @include mq(tab) {
+            display: block;
+          }
           .company_accessmap_container_txt {
             width: 48.5%;
+            @include mq(tab) {
+              width: 100%;
+              margin-bottom: 3rem;
+            }
             .company_accessmap_container_txt_item {
               margin-bottom: 3rem;
               & h6 {
                 margin-bottom: 0.75rem;
                 font-size: 24px;
                 color: $navy;
+                @include mq(tab) {
+                  font-size: 20px;
+                }
+                @include mq(sp) {
+                  font-size: 18px;
+                }
               }
               & p {
                 font-size: 20px;
                 line-height: 1.25;
+                @include mq(tab) {
+                  font-size: 16px;
+                }
+                @include mq(sp) {
+                  font-size: 14px;
+                }
               }
             }
           }
@@ -1609,15 +1989,31 @@ footer {
       padding: 5.5rem 4rem;
       background-color: $white;
       border-radius: 40px;
+      @include mq(tab) {
+        padding: 3.5rem 2.5rem;
+        border-radius: 28px;
+      }
+      @include mq(sp) {
+        padding: 4rem 1.5rem;
+      }
       .services_container_item {
         .services_container_item_inner {
           @include flex_between;
           gap: 5%;
           width: 100%;
+          @include mq(tab) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.5rem;
+          }
           .services_container_item_inner_img {
             width: 50%;
             overflow: hidden;
             border-radius: 20px;
+            @include mq(tab) {
+              width: 100%;
+              border-radius: 10px;
+            }
             & img {
               width: 100%;
               object-fit: cover;
@@ -1627,10 +2023,19 @@ footer {
           }
           .services_container_item_inner_txt {
             width: 45%;
+            @include mq(tab) {
+              width: 100%;
+            }
             & h3 {
               margin-bottom: 1rem;
               font-size: 30px;
               color: $navy;
+              @include mq(tab) {
+                font-size: 26px;
+              }
+              @include mq(sp) {
+                font-size: 22px;
+              }
             }
             & span {
               display: inline-block;
@@ -1640,11 +2045,23 @@ footer {
               color: $blue;
               border-radius: 40px;
               font-size: 20px;
+              @include mq(tab) {
+                font-size: 18px;
+              }
+              @include mq(sp) {
+                font-size: 16px;
+              }
             }
             & ul {
               & li {
                 font-size: 18px;
                 line-height: 1.75;
+                @include mq(tab) {
+                  font-size: 16px;
+                }
+                @include mq(sp) {
+                  font-size: 12px;
+                }
               }
             }
           }
@@ -1653,6 +2070,12 @@ footer {
           margin-top: 1.25rem;
           font-size: 18px;
           line-height: 1.5;
+          @include mq(tab) {
+            font-size: 16px;
+          }
+          @include mq(sp) {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -1660,6 +2083,7 @@ footer {
   #services_faq {
     @include section_top;
     margin-bottom: 6rem;
+    box-sizing: border-box;
     .services_faq_container {
       @include container;
       #qa {
@@ -1683,6 +2107,9 @@ footer {
         align-items: center;
         padding: 0.5rem 2rem;
         border: solid 1.5px $navy;
+        @include mq(tab) {
+          padding: 0.4rem;
+        }
       }
       .Label::before {
         content: "";
@@ -1695,6 +2122,10 @@ footer {
         top: calc(50% - 0.75rem);
         right: 4%;
         transform: rotate(135deg);
+        @include mq(tab) {
+          width: 0.75rem;
+          height: 0.75rem;
+        }
       }
       .Label,
       .content {
@@ -1704,6 +2135,12 @@ footer {
         transition: all 0.3s;
         font-size: 20px;
         color: $white;
+        @include mq(tab) {
+          font-size: 16px;
+        }
+        @include mq(sp) {
+          font-size: 15px;
+        }
       }
       .content {
         height: 0;
@@ -1717,6 +2154,9 @@ footer {
         font-size: 1.2rem;
         line-height: 1.2;
         color: $font_basic;
+        @include mq(tab) {
+          font-size: 1rem;
+        }
       }
       .toggle:checked + .Label + .content {
         height: auto;
@@ -1735,7 +2175,13 @@ footer {
   #works_list {
     @include container;
     @include section_top;
+    @include mq(tab) {
+      padding-top: 4rem;
+    }
     .works_list_button {
+      @include mq(sp) {
+        margin-bottom: 2rem;
+      }
       & button {
         margin: 0 1rem 4rem;
         padding: 0.5rem 1rem;
@@ -1746,6 +2192,17 @@ footer {
         transition: background-color 0.35s ease, color 0.35s ease,
           border-color 0.35s ease;
         font-size: 22px;
+        @include mq(pc) {
+          margin: 0 0.5rem 2rem;
+          font-size: 20px;
+        }
+        @include mq(tab) {
+          font-size: 18px;
+        }
+        @include mq(sp) {
+          font-size: 16px;
+          margin: 0 0.5rem 1rem;
+        }
         &:hover {
           background-color: $blue;
           color: $white;
@@ -1764,6 +2221,16 @@ footer {
       grid-template-rows: 1fr 1fr;
       gap: 10% 5%;
       box-sizing: border-box;
+      @include mq(tab) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 7.5%;
+      }
+      @include mq(sp) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 2.5%;
+      }
       li {
         transition: opacity 0.4s ease, transform 0.4s ease;
         &:hover {
@@ -1786,10 +2253,20 @@ footer {
             margin: 0.5rem 0;
             font-size: 12px;
             color: $weak_navy;
+            @include mq(tab) {
+              font-size: 10px;
+            }
           }
           & h6 {
-            font-size: 14px;
+            font-size: 18px;
             color: $navy;
+            line-height: 1.5;
+            @include mq(tab) {
+              font-size: 14px;
+            }
+            @include mq(sp) {
+              font-size: 12px;
+            }
           }
         }
       }
@@ -1799,6 +2276,12 @@ footer {
     @include container;
     @include section_top;
     margin-bottom: 4rem;
+    @include mq(tab) {
+      padding-bottom: 1rem;
+    }
+    @include mq(sp) {
+      padding: 14rem 0 10rem 0;
+    }
     .works_voice_views {
       width: 100%;
       margin-bottom: 8rem;
@@ -1807,8 +2290,20 @@ footer {
       grid-template-rows: 1fr 1fr;
       gap: 10% 5%;
       box-sizing: border-box;
+      @include mq(tab) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 7.5%;
+      }
+      @include mq(sp) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 2.5%;
+      }
       li {
         transition: opacity 0.4s ease, transform 0.4s ease;
+        box-sizing: border-box;
+        overflow: visible;
         &:hover {
           opacity: 0.75;
           transform: translateY(-2px);
@@ -1826,8 +2321,18 @@ footer {
           }
           & p {
             margin: 0.5rem 0;
-            font-size: 16px;
+            font-size: 18px;
             color: $font_basic;
+            line-height: 1.5;
+            @include mq(pc) {
+              font-size: 16px;
+            }
+            @include mq(tab) {
+              font-size: 14px;
+            }
+            @include mq(sp) {
+              font-size: 12px;
+            }
           }
           & span {
             display: inline-block;
@@ -1856,13 +2361,24 @@ footer {
         border-bottom: 2px solid rgba(37, 47, 102, 0.35);
         .top_news_list_item_link {
           display: grid;
-          grid-template-columns: 220px 160px 1fr; /* 日付 / カテゴリ / タイトル */
+          grid-template-columns: 140px 120px 1fr; /* 日付 / カテゴリ / タイトル */
           align-items: center;
           gap: 2rem;
           padding: 1.4rem 0.5rem;
           text-decoration: none;
           color: inherit;
           transition: background-color 0.2s ease, transform 0.2s ease;
+          @include mq(tab) {
+            grid-template-columns: 100px 100px 1fr; /* 日付 / カテゴリ / タイトル */
+          }
+          @include mq(tab) {
+            grid-template-columns: 1fr 1fr; /* 日付 / カテゴリ を2列 */
+            grid-template-areas:
+              "date cat"
+              "title title";
+            gap: 0.75rem 1rem;
+            padding: 1.1rem 0.5rem;
+          }
           &:hover {
             background-color: $weak_bright_blue;
           }
@@ -1872,6 +2388,9 @@ footer {
             font-size: 18px;
             letter-spacing: 0.02em;
             white-space: nowrap;
+            @include mq(tab) {
+              grid-area: date;
+            }
           }
           .news-cat {
             justify-self: start;
@@ -1885,6 +2404,10 @@ footer {
             font-weight: 700;
             letter-spacing: 0.08em;
             white-space: nowrap;
+            @include mq(tab) {
+              grid-area: cat;
+              justify-self: end;
+            }
           }
           .news-title {
             color: $font_basic;
@@ -1894,6 +2417,13 @@ footer {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            @include mq(tab) {
+              grid-area: title;
+              white-space: normal;
+              overflow: visible;
+              text-overflow: clip;
+              line-height: 1.6;
+            }
           }
         }
       }
@@ -1909,6 +2439,9 @@ footer {
     .news_article {
       width: 70%;
       margin: 0 auto;
+      @include mq(tab) {
+        width: 90%;
+      }
     }
     .news_meta {
       display: flex;
@@ -1940,11 +2473,20 @@ footer {
       line-height: 1.35;
       font-weight: 900;
       color: $navy;
+      @include mq(tab) {
+        font-size: 24px;
+      }
+      @include mq(sp) {
+        font-size: 22px;
+      }
     }
     .news_body {
       color: $font_basic;
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 2;
+      @include mq(tab) {
+        font-size: 14px;
+      }
       & h6 {
         margin: 2rem 0 0.75rem;
         font-size: 1.15rem;
@@ -1977,11 +2519,18 @@ footer {
       @include container;
       h5 {
         margin: 0.5rem 0 1rem;
-        font-size: 24px;
+        font-size: 26px;
         color: $blue;
+        @include mq(tab) {
+          font-size: 22px;
+        }
       }
       p {
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 1.5;
+        @include mq(tab) {
+          font-size: 16px;
+        }
       }
       .company_mission_container_item {
         margin: 3rem 0;
@@ -1990,11 +2539,18 @@ footer {
           border-left: 3px solid $blue;
           color: $navy;
           line-height: 1.5;
+          @include mq(sp) {
+            font-size: 20px;
+          }
         }
         & ul {
           margin-top: 1rem;
           & li {
             margin-bottom: 1rem;
+            line-height: 1.5;
+            @include mq(sp) {
+              font-size: 12px;
+            }
           }
         }
       }
@@ -2004,6 +2560,11 @@ footer {
         td {
           padding: 1rem;
           border: 1px solid #c0c0c0;
+          line-height: 1.5;
+          text-align: left;
+          @include mq(sp) {
+            font-size: 12px;
+          }
         }
         th {
           background-color: $weak_gray;
@@ -2018,18 +2579,31 @@ footer {
     .career_fresh_container {
       p {
         line-height: 1.5;
+        font-size: 18px;
+        @include mq(sp) {
+          font-size: 16px;
+        }
       }
       .career_fresh_container_inner {
         width: 100%;
         margin-top: 3rem;
         @include flex_between;
         gap: 5%;
+        @include mq(sp) {
+          display: block;
+          margin-top: 1rem;
+        }
         a {
           width: 47.5%;
           display: inline-block;
           color: $font_basic;
           font-weight: bolder;
           transition: opacity 0.4s ease, transform 0.4s ease;
+          @include mq(sp) {
+            width: 100%;
+            margin-top: 2rem;
+            font-size: 16px;
+          }
           &:hover {
             opacity: 0.75;
             transform: translateY(-2px);
@@ -2049,6 +2623,7 @@ footer {
               gap: 0%;
               align-items: center;
               justify-content: flex-start;
+              margin-top: 0.5rem;
               .career_fresh_container_inner_site_img {
                 width: 10%;
                 overflow: hidden;
@@ -2058,8 +2633,12 @@ footer {
                   display: block;
                   aspect-ratio: 1/1;
                 }
-                & p {
-                  width: 88%;
+              }
+              & p {
+                width: 88%;
+                font-size: 14px;
+                @include mq(sp) {
+                  font-size: 16px;
                 }
               }
             }
@@ -2075,6 +2654,7 @@ footer {
   .contact_container {
     @include container;
     margin-top: 4rem;
+    box-sizing: border-box;
     .contact_form_item {
       padding: 1.75rem;
       width: 100%;
@@ -2082,16 +2662,28 @@ footer {
       align-items: center;
       margin: 0 auto;
       box-sizing: border-box;
+      @include mq(tab) {
+        display: block;
+        padding: 0;
+      }
       .Form-Item-Label {
         width: 35%;
         letter-spacing: 0.05em;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 20px;
         color: $blue;
+        @include mq(tab) {
+          width: 100%;
+          margin-top: 2rem;
+          font-size: 16px;
+        }
+        @include mq(sp) {
+          font-size: 14px;
+        }
         .Form-Item-Label-Required {
           border-radius: 50px;
           margin-left: 0.75rem;
-          padding: 0.5rem 0.25rem;
+          padding: 0.5rem 0.75rem;
           width: 15%;
           display: inline-block;
           text-align: center;
@@ -2099,11 +2691,24 @@ footer {
           color: $white;
           font-size: 14px;
           color: red;
+          @include mq(tab) {
+            font-size: 14px;
+            padding: 0.5rem 0.2rem;
+          }
         }
       }
       .Form-Item-Label.isMsg {
         margin-top: 0.5rem;
         margin-bottom: auto;
+        font-size: 20px;
+        @include mq(tab) {
+          width: 100%;
+          margin-top: 2rem;
+          font-size: 18px;
+        }
+        @include mq(sp) {
+          font-size: 14px;
+        }
       }
       .Form-Item-Input {
         border: 1px solid #ddd;
@@ -2114,7 +2719,11 @@ footer {
         flex: 1;
         width: 100%;
         background: $white;
-        font-size: 18px;
+        font-size: 20px;
+        box-sizing: border-box;
+        @include mq(tab) {
+          margin: 0.5rem 0;
+        }
       }
       .Form-Item-Textarea-title {
         border: 1px solid #ddd;
@@ -2125,6 +2734,11 @@ footer {
         flex: 1;
         background: $white;
         font-size: 18px;
+        box-sizing: border-box;
+        @include mq(tab) {
+          width: 100%;
+          margin: 0.5rem 0;
+        }
       }
       .Form-Item-Textarea {
         border: 1px solid #ddd;
@@ -2135,6 +2749,11 @@ footer {
         flex: 1;
         background: $white;
         font-size: 18px;
+        box-sizing: border-box;
+        @include mq(tab) {
+          width: 100%;
+          margin: 0.5rem 0;
+        }
       }
     }
     .contact_container_send {
@@ -2149,11 +2768,19 @@ footer {
         background: #001f42;
         color: $white;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 22px;
         cursor: pointer;
         border: none;
         border-radius: 10px;
         transition: 0.5s;
+        @include mq(tab) {
+          padding: 1rem 2.5rem;
+          font-size: 20px;
+        }
+        @include mq(sp) {
+          padding: 0.75rem 2rem;
+          font-size: 16px;
+        }
       }
       .Form-Btn:hover {
         opacity: 0.5;
@@ -2161,6 +2788,13 @@ footer {
       }
       & p {
         margin: 0.75rem 0;
+        font-size: 18px;
+        @include mq(tab) {
+          font-size: 16px;
+        }
+        @include mq(sp) {
+          font-size: 14px;
+        }
         a {
           color: $font_basic;
           border-bottom: 1px solid $font_basic;
@@ -2192,7 +2826,19 @@ footer {
       margin: 0 0 4rem 0;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5%;
+      gap: 2.5rem;
+      @include mq(tab) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+        grid-auto-rows: auto;
+        gap: 2.5rem;
+      }
+      @include mq(sp) {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-rows: auto;
+        gap: 3rem;
+      }
     }
     .blog_card {
       background: $white;
@@ -2229,34 +2875,33 @@ footer {
       font-size: 1rem;
       line-height: 1.5;
       color: $navy;
+      @include mq(tab) {
+        font-size: 14px;
+      }
     }
     .blog_card_date {
       font-size: 0.9rem;
       color: rgba(37, 47, 102, 0.6);
+      @include mq(tab) {
+        font-size: 12px;
+      }
     }
     .blog_archive_more {
       margin-top: 2.5rem;
       display: flex;
       justify-content: center;
     }
-    @include mq(tab) {
-      .blog_cards {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-    }
-    @include mq(sp) {
-      .blog_cards {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-    }
     .viewbutton {
       margin-top: 10rem;
       display: flex;
       justify-content: center;
-      position: relative;
+      position: static;
       z-index: 10;
+      inset: auto;
+      transform: none;
+      @include mq(tab) {
+        margin-top: 4rem;
+      }
     }
   }
 }
@@ -2268,6 +2913,12 @@ footer {
     .blog_single_container {
       width: 60%;
       margin: 0 auto;
+      @include mq(tab) {
+        width: 80%;
+      }
+      @include mq(sp) {
+        width: 90%;
+      }
       .blog_single_header {
         text-align: left;
         margin-bottom: 2.5rem;
@@ -2283,10 +2934,16 @@ footer {
         }
         .blog_single_title {
           margin: 0 0 0.6rem;
-          font-size: 22px;
+          font-size: 24px;
           font-weight: 900;
           color: $navy;
           line-height: 1.35;
+          @include mq(tab) {
+            font-size: 22px;
+          }
+          @include mq(sp) {
+            font-size: 18px;
+          }
         }
         .blog_single_date {
           display: inline-block;
@@ -2301,6 +2958,12 @@ footer {
       color: $font_basic;
       p {
         margin: 2rem 0;
+        @include mq(tab) {
+          font-size: 14px;
+        }
+        @include mq(sp) {
+          font-size: 12px;
+        }
       }
     }
     .blog_single_back {
