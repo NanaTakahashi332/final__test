@@ -377,10 +377,16 @@ header {
         margin: 20% 0;
         a {
           color: $navy;
-          display: block;
-          font-size: 1rem;
+          display: inline-block;
+          padding: 0 0.5rem;
+          font-size: 1.2rem;
           font-weight: 400;
           text-decoration: none;
+          border-bottom: 1.5px solid $blue;
+          line-height: 1.5;
+          @include mq(sp) {
+            font-size: 1.1rem;
+          }
         }
       }
     }
@@ -388,11 +394,10 @@ header {
   #h-nav.panelactive {
     @include mq(tab) {
       transform: translateX(0);
-      background-color: #ccc;
+      background-color: $weak_gray;
     }
     @include mq(sp) {
       transform: translateX(0);
-      background-color: #ccc;
     }
   }
 }
@@ -1233,7 +1238,6 @@ footer {
               opacity: 0.85;
               transform: translateY(-2px);
             }
-
             .top_works_mainitem_img {
               width: 100%;
               @include mq(tab) {

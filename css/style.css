@@ -584,21 +584,28 @@ header #h-nav ul li {
 }
 header #h-nav ul li a {
   color: #252f66;
-  display: block;
-  font-size: 1rem;
+  display: inline-block;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-decoration: none;
+  border-bottom: 1.5px solid #296aa2;
+  line-height: 1.5;
+}
+@media screen and (max-width: 480px) {
+  header #h-nav ul li a {
+    font-size: 1.1rem;
+  }
 }
 @media screen and (max-width: 768px) {
   header #h-nav.panelactive {
     transform: translateX(0);
-    background-color: #ccc;
+    background-color: #ebe8ef;
   }
 }
 @media screen and (max-width: 480px) {
   header #h-nav.panelactive {
     transform: translateX(0);
-    background-color: #ccc;
   }
 }
 
