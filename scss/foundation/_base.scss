@@ -14,8 +14,17 @@ a {
 
 // フォント
 body {
-  font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+  font-family:
+    "Noto Sans JP",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Meiryo,
     sans-serif;
 }
 
@@ -29,7 +38,9 @@ body {
   z-index: 99999;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 /* ロード完了でフェードアウトする */
 .loading.is-hidden {
@@ -97,48 +108,49 @@ body {
 
 // ページトップリンク
 #page_top {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   position: fixed;
   right: 0;
   bottom: 0;
   background: $navy;
   opacity: 0.8;
   z-index: 10000;
+  border-radius: 50px;
   @include mq(tab) {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   @include mq(sp) {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 
 #page_top a {
   position: relative;
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   text-decoration: none;
   @include mq(tab) {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   @include mq(sp) {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 #page_top a::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f106";
-  font-size: 50px;
+  font-size: 40px;
   color: #fff;
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 0;
   bottom: 0;
   right: 0;
@@ -146,14 +158,14 @@ body {
   margin: auto;
   text-align: center;
   @include mq(tab) {
-    font-size: 40px;
-    width: 40px;
-    height: 40px;
-  }
-  @include mq(sp) {
     font-size: 30px;
     width: 30px;
     height: 30px;
+  }
+  @include mq(sp) {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -162,7 +174,7 @@ header {
   box-sizing: border-box;
   align-items: center;
   gap: 3rem;
-  padding: 0.75rem 0;
+  padding: 0.3rem 0;
   position: relative;
   position: fixed;
   top: 0;
@@ -222,7 +234,9 @@ header {
           display: inline-block;
           text-decoration: none;
           color: $navy;
-          transition: color 0.4s ease, opacity 0.4s ease;
+          transition:
+            color 0.4s ease,
+            opacity 0.4s ease;
           &::after {
             content: "";
             position: absolute;
@@ -234,7 +248,9 @@ header {
             transform: scaleX(0);
             transform-origin: left;
             opacity: 0;
-            transition: transform 0.4s ease, opacity 0.4s ease;
+            transition:
+              transform 0.4s ease,
+              opacity 0.4s ease;
           }
           &:hover::after {
             transform: scaleX(1);
@@ -250,8 +266,12 @@ header {
           align-items: center;
           justify-content: center;
           border: 1.5px solid transparent; // ← 通常時から“枠の幅”を確保（ガタつき防止）
-          transition: background-color 0.4s ease, color 0.4s ease,
-            border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+          transition:
+            background-color 0.4s ease,
+            color 0.4s ease,
+            border-color 0.4s ease,
+            opacity 0.4s ease,
+            transform 0.4s ease;
           &::after {
             content: none;
           }
@@ -524,7 +544,9 @@ footer {
       transform: scaleX(0);
       transform-origin: left;
       opacity: 0;
-      transition: transform 0.35s ease, opacity 0.35s ease;
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
     }
     a:hover::after {
       transform: scaleX(1);
@@ -549,7 +571,9 @@ footer {
     }
     a:hover {
       opacity: 1;
-      transition: 0.2s ease, opacity 0.2s ease;
+      transition:
+        0.2s ease,
+        opacity 0.2s ease;
     }
   }
   // フッター下段（注意書き）
@@ -656,7 +680,7 @@ footer {
         }
       }
       & p {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1.8;
         color: $navy;
         @include mq(pc) {
@@ -703,7 +727,9 @@ footer {
             transform: scaleX(0);
             transform-origin: left;
             opacity: 0;
-            transition: transform 0.35s ease, opacity 0.35s ease;
+            transition:
+              transform 0.35s ease,
+              opacity 0.35s ease;
           }
           &:hover::after,
           &:focus-visible::after {
@@ -719,7 +745,10 @@ footer {
 // Viewボタン
 .viewbutton_a {
   @include viewbutton_a;
-  transition: background-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
   @include mq(tab) {
     @include viewbutton_a_tabsize;
   }
@@ -731,11 +760,76 @@ footer {
 .viewbutton_a .txt {
   @include viewbutton_a_txt;
   transition: transform 0.4s ease;
+  @include mq(tab) {
+    font-size: 12px;
+  }
 }
 .viewbutton_a .icon {
   @include viewbutton_a_icon;
+  transition: transform 0.35s ease;
   @include mq(tab) {
-    @include viewbutton_a_icon_tabsize;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    padding: 0;
+    display: grid;
+    place-items: center;
+  }
+}
+.viewbutton_a .icon::before {
+  content: "→";
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.35s ease;
+  @include mq(tab) {
+    display: block;
+    font-size: 1rem;
+    transform: translateY(0.02em);
+  }
+}
+.viewbutton_a:hover .icon::before {
+  transform: translateX(4px);
+}
+.viewbutton_a .icon {
+  font-size: 0;
+}
+.viewbutton_a:hover .icon {
+  transform: translateX(2px);
+}
+.viewbutton_a:hover .icon::before {
+  transform: translateX(4px);
+}
+
+/* Back to List ボタン */
+.viewbutton_a--back {
+  background: $weak_gray;
+  color: $navy;
+  &:hover {
+    background-color: mix(white, $weak_gray, 10%);
+    opacity: 0.95;
+  }
+  .icon {
+    border-color: $navy;
+  }
+  .icon {
+    font-size: 0;
+  }
+  .icon::before {
+    content: "←";
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 0.35s ease;
+    @include mq(tab) {
+      font-size: 1.2rem;
+    }
+  }
+  &:hover .icon::before {
+    transform: translateX(-4px);
+  }
+  &:hover .icon {
+    transform: translateX(-2px);
   }
 }
 
@@ -889,13 +983,17 @@ footer {
               display: inline-flex;
               align-items: center;
               justify-content: center;
-              padding: 1.5rem 3rem;
+              padding: 1rem 2rem;
               border-radius: 40px;
               box-shadow: 7px 9px 15px -5px #777777;
-              font-size: 26px;
+              font-size: 22px;
               border: 1.5px solid transparent; // 枠幅を確保して、ホバーでガタつかないようにする
-              transition: background-color 0.4s ease, color 0.4s ease,
-                border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+              transition:
+                background-color 0.4s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                opacity 0.4s ease,
+                transform 0.4s ease;
               @include mq(pc) {
                 font-size: 22px;
                 margin-top: 2rem;
@@ -1068,7 +1166,10 @@ footer {
         }
         .sec-title {
           @include section_title;
-          @include container;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
           .sec-title__en {
             @include section_title_en;
             @include mq(pc) {
@@ -1106,6 +1207,18 @@ footer {
             @include mq(tab) {
               width: 90%;
               box-sizing: border-box;
+            }
+            .top_services_left_sticky {
+              position: sticky;
+              top: 110px;
+              display: grid;
+              gap: 2.5rem;
+              align-content: start;
+              z-index: 5;
+              @include mq(tab) {
+                position: static;
+                top: auto;
+              }
             }
             .top_services_viewbutton {
               @include mq(tab) {
@@ -1216,7 +1329,9 @@ footer {
         }
         .top_works_mainitem {
           margin: 4rem 0 3rem;
-          transition: opacity 0.4s ease, transform 0.4s ease;
+          transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
           @include mq(tab) {
             width: 100%;
           }
@@ -1230,7 +1345,9 @@ footer {
             gap: 2.5%;
             text-decoration: none;
             color: inherit;
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition:
+              opacity 0.4s ease,
+              transform 0.4s ease;
             @include mq(tab) {
               display: block;
             }
@@ -1254,7 +1371,7 @@ footer {
                 width: 100%;
               }
               & h4 {
-                font-size: 30px;
+                font-size: 24px;
                 line-height: 1.5;
                 @include mq(tab) {
                   font-size: 20px;
@@ -1283,7 +1400,9 @@ footer {
           }
           .top_works_others_item {
             width: 30%;
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition:
+              opacity 0.4s ease,
+              transform 0.4s ease;
             @include mq(tab) {
               width: 100%;
               margin: 3rem 0;
@@ -1295,7 +1414,9 @@ footer {
             a {
               display: block;
               color: inherit;
-              transition: opacity 0.4s ease, transform 0.4s ease;
+              transition:
+                opacity 0.4s ease,
+                transform 0.4s ease;
               a:hover {
                 opacity: 0.85;
                 transform: translateY(-2px);
@@ -1400,7 +1521,9 @@ footer {
               padding: 1.4rem 0.5rem;
               text-decoration: none;
               color: inherit;
-              transition: background-color 0.2s ease, transform 0.2s ease;
+              transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
               @include mq(tab) {
                 grid-template-columns: auto auto 1fr; // date / cat / (余り)
                 grid-template-areas:
@@ -1595,7 +1718,9 @@ footer {
               background: center / cover no-repeat;
               opacity: 0;
               transform: scale(1.04);
-              transition: opacity 0.45s ease, transform 0.45s ease;
+              transition:
+                opacity 0.45s ease,
+                transform 0.45s ease;
               z-index: 0;
             }
             &::after {
@@ -1612,7 +1737,9 @@ footer {
               z-index: 2;
             }
             .top_panel_a_item_arrow {
-              transition: transform 0.35s ease, background-color 0.35s ease;
+              transition:
+                transform 0.35s ease,
+                background-color 0.35s ease;
             }
             &:hover .top_panel_a_item {
               transform: translateY(-2px);
@@ -2110,7 +2237,8 @@ footer {
         text-align: left;
         align-items: center;
         padding: 0.5rem 2rem;
-        border: solid 1.5px $navy;
+        border: solid 1.5px $blue;
+        border-radius: 5px 5px 0 0;
         @include mq(tab) {
           padding: 0.4rem;
         }
@@ -2150,7 +2278,8 @@ footer {
         height: 0;
         margin-bottom: 1rem;
         overflow: hidden;
-        border: solid 1.5px $navy;
+        border: solid 1.75px $blue;
+        border-radius: 0 0 5px 5px;
       }
       .content p {
         text-align: left;
@@ -2188,14 +2317,16 @@ footer {
       }
       & button {
         margin: 0 1rem 4rem;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.75rem;
         background-color: $weak_bright_blue;
         color: $blue;
         border-radius: 50px;
         border: 1.5px solid $blue;
-        transition: background-color 0.35s ease, color 0.35s ease,
+        transition:
+          background-color 0.35s ease,
+          color 0.35s ease,
           border-color 0.35s ease;
-        font-size: 22px;
+        font-size: 16px;
         @include mq(pc) {
           margin: 0 0.5rem 2rem;
           font-size: 20px;
@@ -2236,7 +2367,9 @@ footer {
         gap: 2.5%;
       }
       li {
-        transition: opacity 0.4s ease, transform 0.4s ease;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
         &:hover {
           opacity: 0.75;
           transform: translateY(-2px);
@@ -2305,7 +2438,9 @@ footer {
         gap: 2.5%;
       }
       li {
-        transition: opacity 0.4s ease, transform 0.4s ease;
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
         box-sizing: border-box;
         overflow: visible;
         &:hover {
@@ -2371,7 +2506,9 @@ footer {
           padding: 1.4rem 0.5rem;
           text-decoration: none;
           color: inherit;
-          transition: background-color 0.2s ease, transform 0.2s ease;
+          transition:
+            background-color 0.2s ease,
+            transform 0.2s ease;
           @include mq(tab) {
             grid-template-columns: 100px 100px 1fr; /* 日付 / カテゴリ / タイトル */
           }
@@ -2602,7 +2739,9 @@ footer {
           display: inline-block;
           color: $font_basic;
           font-weight: bolder;
-          transition: opacity 0.4s ease, transform 0.4s ease;
+          transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
           @include mq(sp) {
             width: 100%;
             margin-top: 2rem;
@@ -2685,16 +2824,16 @@ footer {
           font-size: 14px;
         }
         .Form-Item-Label-Required {
-          border-radius: 50px;
+          border-radius: 5px;
           margin-left: 0.75rem;
-          padding: 0.5rem 0.75rem;
+          padding: 0.5rem 0.25rem;
           width: 15%;
           display: inline-block;
           text-align: center;
-          background: $weak_gray;
+          background: #ccc;
           color: $white;
           font-size: 14px;
-          color: red;
+          color: $white;
           @include mq(tab) {
             font-size: 14px;
             padding: 0.5rem 0.2rem;
@@ -2723,10 +2862,11 @@ footer {
         flex: 1;
         width: 100%;
         background: $white;
-        font-size: 20px;
+        font-size: 16px;
         box-sizing: border-box;
         @include mq(tab) {
           margin: 0.5rem 0;
+          font-size: 12px;
         }
       }
       .Form-Item-Textarea-title {
@@ -2847,7 +2987,9 @@ footer {
     .blog_card {
       background: $white;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
       will-change: opacity, transform;
       &:hover {
         opacity: 0.85;

@@ -265,45 +265,46 @@ body {
   }
 }
 #page_top {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   position: fixed;
   right: 0;
   bottom: 0;
   background: #252f66;
   opacity: 0.8;
   z-index: 10000;
+  border-radius: 50px;
 }
 @media screen and (max-width: 768px) {
   #page_top {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 }
 @media screen and (max-width: 480px) {
   #page_top {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 
 #page_top a {
   position: relative;
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   text-decoration: none;
 }
 @media screen and (max-width: 768px) {
   #page_top a {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 }
 @media screen and (max-width: 480px) {
   #page_top a {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -311,11 +312,11 @@ body {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f106";
-  font-size: 50px;
+  font-size: 40px;
   color: #fff;
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 0;
   bottom: 0;
   right: 0;
@@ -325,16 +326,16 @@ body {
 }
 @media screen and (max-width: 768px) {
   #page_top a::before {
-    font-size: 40px;
-    width: 40px;
-    height: 40px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
   }
 }
 @media screen and (max-width: 480px) {
   #page_top a::before {
-    font-size: 30px;
-    width: 30px;
-    height: 30px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -342,7 +343,7 @@ header {
   box-sizing: border-box;
   align-items: center;
   gap: 3rem;
-  padding: 0.75rem 0;
+  padding: 0.3rem 0;
   position: relative;
   position: fixed;
   top: 0;
@@ -925,7 +926,7 @@ footer .footer_attention .footer_attention_right h6 {
   }
 }
 #childpage_heading .childpage_heading_container .childpage_heading_container_description p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.8;
   color: #252f66;
 }
@@ -1019,6 +1020,11 @@ footer .footer_attention .footer_attention_right h6 {
   white-space: nowrap;
   transition: transform 0.4s ease;
 }
+@media screen and (max-width: 768px) {
+  .viewbutton_a .txt {
+    font-size: 12px;
+  }
+}
 
 .viewbutton_a .icon {
   width: 1.25rem;
@@ -1030,15 +1036,82 @@ footer .footer_attention .footer_attention_right h6 {
   font-size: 1.4rem;
   line-height: 1;
   padding: 0.75rem;
+  transition: transform 0.35s ease;
 }
 @media screen and (max-width: 768px) {
   .viewbutton_a .icon {
     width: 1.5rem;
     height: 1.5rem;
-    border: 1px solid #fff;
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    font-size: 1rem;
+    padding: 0;
+    display: grid;
+    place-items: center;
   }
+}
+
+.viewbutton_a .icon::before {
+  content: "→";
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.35s ease;
+}
+@media screen and (max-width: 768px) {
+  .viewbutton_a .icon::before {
+    display: block;
+    font-size: 1rem;
+    transform: translateY(0.02em);
+  }
+}
+
+.viewbutton_a:hover .icon::before {
+  transform: translateX(4px);
+}
+
+.viewbutton_a .icon {
+  font-size: 0;
+}
+
+.viewbutton_a:hover .icon {
+  transform: translateX(2px);
+}
+
+.viewbutton_a:hover .icon::before {
+  transform: translateX(4px);
+}
+
+/* Back to List ボタン */
+.viewbutton_a--back {
+  background: #ebe8ef;
+  color: #252f66;
+}
+.viewbutton_a--back:hover {
+  background-color: rgb(237, 234.3, 240.6);
+  opacity: 0.95;
+}
+.viewbutton_a--back .icon {
+  border-color: #252f66;
+}
+.viewbutton_a--back .icon {
+  font-size: 0;
+}
+.viewbutton_a--back .icon::before {
+  content: "←";
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.35s ease;
+}
+@media screen and (max-width: 768px) {
+  .viewbutton_a--back .icon::before {
+    font-size: 1.2rem;
+  }
+}
+.viewbutton_a--back:hover .icon::before {
+  transform: translateX(-4px);
+}
+.viewbutton_a--back:hover .icon {
+  transform: translateX(-2px);
 }
 
 /* フェードアップのスタイル */
@@ -1212,10 +1285,10 @@ footer .footer_attention .footer_attention_right h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 40px;
   box-shadow: 7px 9px 15px -5px #777777;
-  font-size: 26px;
+  font-size: 22px;
   border: 1.5px solid transparent;
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
@@ -1438,8 +1511,10 @@ footer .footer_attention .footer_attention_right h6 {
   gap: 1.25rem;
   margin: 0;
   font-family: "Barlow";
-  width: 90%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 .page-top main article #top_services .sec-title .sec-title__en {
   font-size: 90px;
@@ -1504,6 +1579,20 @@ footer .footer_attention .footer_attention_right h6 {
   .page-top main article #top_services .top_services_group .top_services_group_leftbox {
     width: 90%;
     box-sizing: border-box;
+  }
+}
+.page-top main article #top_services .top_services_group .top_services_group_leftbox .top_services_left_sticky {
+  position: sticky;
+  top: 110px;
+  display: grid;
+  gap: 2.5rem;
+  align-content: start;
+  z-index: 5;
+}
+@media screen and (max-width: 768px) {
+  .page-top main article #top_services .top_services_group .top_services_group_leftbox .top_services_left_sticky {
+    position: static;
+    top: auto;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1713,7 +1802,7 @@ footer .footer_attention .footer_attention_right h6 {
   }
 }
 .page-top main article #top_works .top_works_mainitem a .top_works_mainitem_txtgroup h4 {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
@@ -2794,7 +2883,8 @@ footer .footer_attention .footer_attention_right h6 {
   text-align: left;
   align-items: center;
   padding: 0.5rem 2rem;
-  border: solid 1.5px #252f66;
+  border: solid 1.5px #296aa2;
+  border-radius: 5px 5px 0 0;
 }
 @media screen and (max-width: 768px) {
   .page-services #services_faq .services_faq_container .Label {
@@ -2844,7 +2934,8 @@ footer .footer_attention .footer_attention_right h6 {
   height: 0;
   margin-bottom: 1rem;
   overflow: hidden;
-  border: solid 1.5px #252f66;
+  border: solid 1.75px #296aa2;
+  border-radius: 0 0 5px 5px;
 }
 .page-services #services_faq .services_faq_container .content p {
   text-align: left;
@@ -2884,13 +2975,13 @@ footer .footer_attention .footer_attention_right h6 {
 }
 .page-works #works_list .works_list_button button {
   margin: 0 1rem 4rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   background-color: rgba(108, 206, 231, 0.1254901961);
   color: #296aa2;
   border-radius: 50px;
   border: 1.5px solid #296aa2;
   transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-  font-size: 22px;
+  font-size: 16px;
 }
 @media screen and (max-width: 1024px) {
   .page-works #works_list .works_list_button button {
@@ -3461,16 +3552,16 @@ footer .footer_attention .footer_attention_right h6 {
   }
 }
 .page-contact .contact_container .contact_form_item .Form-Item-Label .Form-Item-Label-Required {
-  border-radius: 50px;
+  border-radius: 5px;
   margin-left: 0.75rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.25rem;
   width: 15%;
   display: inline-block;
   text-align: center;
-  background: #ebe8ef;
+  background: #ccc;
   color: #ffffff;
   font-size: 14px;
-  color: red;
+  color: #ffffff;
 }
 @media screen and (max-width: 768px) {
   .page-contact .contact_container .contact_form_item .Form-Item-Label .Form-Item-Label-Required {
@@ -3504,12 +3595,13 @@ footer .footer_attention .footer_attention_right h6 {
   flex: 1;
   width: 100%;
   background: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
   box-sizing: border-box;
 }
 @media screen and (max-width: 768px) {
   .page-contact .contact_container .contact_form_item .Form-Item-Input {
     margin: 0.5rem 0;
+    font-size: 12px;
   }
 }
 .page-contact .contact_container .contact_form_item .Form-Item-Textarea-title {
