@@ -395,6 +395,12 @@ header {
       li {
         text-align: center;
         margin: 20% 0;
+        @include mq(tab) {
+          margin: 10% 0;
+        }
+        @include mq(sp) {
+          margin: 12% 0;
+        }
         a {
           color: $navy;
           display: inline-block;
@@ -404,8 +410,11 @@ header {
           text-decoration: none;
           border-bottom: 1.5px solid $blue;
           line-height: 1.5;
+          @include mq(tab) {
+            font-size: 1rem;
+          }
           @include mq(sp) {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
           }
         }
       }
@@ -630,11 +639,14 @@ footer {
   font-size: 40px;
   font-weight: 900;
   color: $navy;
+  @include mq(pc) {
+    font-size: 36px;
+  }
   @include mq(tab) {
-    font-size: 34px;
+    font-size: 30px;
   }
   @include mq(sp) {
-    font-size: 28px;
+    font-size: 24px;
   }
   &::after {
     @include child_sec_title_after;
@@ -684,10 +696,13 @@ footer {
         line-height: 1.8;
         color: $navy;
         @include mq(pc) {
-          font-size: 18px;
+          font-size: 16px;
         }
         @include mq(tab) {
-          font-size: 16px;
+          font-size: 14px;
+        }
+        @include mq(sp) {
+          font-size: 12px;
         }
       }
     }
@@ -714,7 +729,10 @@ footer {
             font-size: 16px;
           }
           @include mq(tab) {
-            font-size: 16px;
+            font-size: 14px;
+          }
+          @include mq(sp) {
+            font-size: 12px;
           }
           &::after {
             content: "";
@@ -752,6 +770,10 @@ footer {
   @include mq(tab) {
     @include viewbutton_a_tabsize;
   }
+  @include mq(sp) {
+    padding: 0.4rem 1rem;
+    font-size: 14px;
+  }
 }
 .viewbutton_a:hover {
   background-color: mix(white, #252f66, 14%);
@@ -784,7 +806,7 @@ footer {
   transition: transform 0.35s ease;
   @include mq(tab) {
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transform: translateY(0.02em);
   }
 }
@@ -924,16 +946,18 @@ footer {
         .fv_group {
           @include container;
           h1 {
-            padding: 16rem 0 1rem;
+            // padding: 16rem 0 1rem;
+            padding: 10rem 0 1rem;
             font-size: 60px;
             line-height: 1.5;
             letter-spacing: 0.1em;
             text-shadow: 7px 9px 15px #777777;
             @include mq(pc) {
-              font-size: 50px;
+              font-size: 48px;
             }
             @include mq(tab) {
-              font-size: 42px;
+              font-size: 40px;
+              line-height: 1.25;
             }
             @include mq(sp) {
               padding: 12rem 0 1rem;
@@ -950,11 +974,14 @@ footer {
             padding-bottom: 8rem;
             font-size: 20px;
             font-weight: lighter;
+            @include mq(pc) {
+              padding-bottom: 4rem;
+            }
             @include mq(tab) {
-              font-size: 18px;
+              font-size: 16px;
             }
             @include mq(sp) {
-              font-size: 16px;
+              font-size: 12px;
             }
           }
           .fv_group_cta {
@@ -967,10 +994,11 @@ footer {
             font-size: 28px;
             @include mq(pc) {
               width: 100%;
-              display: block;
+              // display: block;
             }
             @include mq(tab) {
               width: 100%;
+              display: block;
             }
             h3 {
               padding: 0;
@@ -996,11 +1024,11 @@ footer {
                 transform 0.4s ease;
               @include mq(pc) {
                 font-size: 22px;
-                margin-top: 2rem;
+                margin-top: 1rem;
               }
               @include mq(tab) {
-                font-size: 20px;
-                padding: 1rem 2rem;
+                font-size: 16px;
+                padding: 0.75rem 1.5rem;
               }
               &:hover {
                 opacity: 1;
@@ -1190,7 +1218,7 @@ footer {
           margin-top: 2rem;
           @include flex_between;
           gap: 5%;
-          @include mq(tab) {
+          @include mq(pc) {
             display: block;
             margin: 0 auto;
           }
@@ -1215,7 +1243,7 @@ footer {
               gap: 2.5rem;
               align-content: start;
               z-index: 5;
-              @include mq(tab) {
+              @include mq(pc) {
                 position: static;
                 top: auto;
               }
@@ -1247,7 +1275,7 @@ footer {
             border-bottom-left-radius: 20px;
             padding: 5%;
             box-sizing: border-box;
-            @include mq(tab) {
+            @include mq(pc) {
               width: 90%;
               margin: 2rem auto 0;
               border-radius: 20px;
@@ -1286,10 +1314,10 @@ footer {
                 letter-spacing: 0.02em;
                 line-height: 1.2;
                 @include mq(tab) {
-                  font-size: 26px;
+                  font-size: 24px;
                 }
                 @include mq(sp) {
-                  font-size: 24px;
+                  font-size: 20px;
                 }
               }
               .top_services_group_rightbox_item_txt {
@@ -1298,6 +1326,12 @@ footer {
                 line-height: 1.9;
                 color: #252f66;
                 opacity: 0.9;
+                @include mq(tab) {
+                  font-size: 14px;
+                }
+                @include mq(sp) {
+                  font-size: 12px;
+                }
               }
             }
           }
@@ -1570,6 +1604,10 @@ footer {
                   grid-area: title;
                   width: 100%;
                   justify-self: stretch;
+                  font-size: 16px;
+                }
+                @include mq(sp) {
+                  font-size: 14px;
                 }
               }
               .news_body {
@@ -1644,7 +1682,10 @@ footer {
             width: 90%;
             margin: 2rem auto 0;
             padding-left: 0;
-            font-size: 16px;
+            font-size: 14px;
+          }
+          @include mq(pc) {
+            font-size: 12px;
           }
         }
         .marquee-right {
@@ -1790,6 +1831,10 @@ footer {
               opacity: 0.95;
               @include mq(tab) {
                 margin-bottom: 0;
+                font-size: 14px;
+              }
+              @include mq(sp) {
+                font-size: 12px;
               }
             }
             .top_panel_a_item_arrow {
@@ -2177,10 +2222,11 @@ footer {
               border-radius: 40px;
               font-size: 20px;
               @include mq(tab) {
-                font-size: 18px;
+                font-size: 16px;
               }
               @include mq(sp) {
-                font-size: 16px;
+                padding: 0.5rem 1rem;
+                font-size: 14px;
               }
             }
             & ul {
@@ -2288,7 +2334,10 @@ footer {
         line-height: 1.2;
         color: $font_basic;
         @include mq(tab) {
-          font-size: 1rem;
+          font-size: 14px;
+        }
+        @include mq(sp) {
+          font-size: 12px;
         }
       }
       .toggle:checked + .Label + .content {

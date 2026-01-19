@@ -583,6 +583,16 @@ header #h-nav ul li {
   text-align: center;
   margin: 20% 0;
 }
+@media screen and (max-width: 768px) {
+  header #h-nav ul li {
+    margin: 10% 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  header #h-nav ul li {
+    margin: 12% 0;
+  }
+}
 header #h-nav ul li a {
   color: #252f66;
   display: inline-block;
@@ -593,9 +603,14 @@ header #h-nav ul li a {
   border-bottom: 1.5px solid #296aa2;
   line-height: 1.5;
 }
+@media screen and (max-width: 768px) {
+  header #h-nav ul li a {
+    font-size: 1rem;
+  }
+}
 @media screen and (max-width: 480px) {
   header #h-nav ul li a {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -842,14 +857,19 @@ footer .footer_attention .footer_attention_right h6 {
   font-weight: 900;
   color: #252f66;
 }
+@media screen and (max-width: 1024px) {
+  .child_sec_title {
+    font-size: 36px;
+  }
+}
 @media screen and (max-width: 768px) {
   .child_sec_title {
-    font-size: 34px;
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 480px) {
   .child_sec_title {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 .child_sec_title::after {
@@ -932,12 +952,17 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 1024px) {
   #childpage_heading .childpage_heading_container .childpage_heading_container_description p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
   #childpage_heading .childpage_heading_container .childpage_heading_container_description p {
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #childpage_heading .childpage_heading_container .childpage_heading_container_description p {
+    font-size: 12px;
   }
 }
 #childpage_heading .childpage_heading_container .childpage_heading_container_pagelink {
@@ -969,7 +994,12 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 768px) {
   #childpage_heading .childpage_heading_container .childpage_heading_container_pagelink li a {
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #childpage_heading .childpage_heading_container .childpage_heading_container_pagelink li a {
+    font-size: 12px;
   }
 }
 #childpage_heading .childpage_heading_container .childpage_heading_container_pagelink li a::after {
@@ -1008,6 +1038,12 @@ footer .footer_attention .footer_attention_right h6 {
   .viewbutton_a {
     padding: 0.5rem 1.5rem;
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .viewbutton_a {
+    padding: 0.4rem 1rem;
+    font-size: 14px;
   }
 }
 
@@ -1059,7 +1095,7 @@ footer .footer_attention .footer_attention_right h6 {
 @media screen and (max-width: 768px) {
   .viewbutton_a .icon::before {
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transform: translateY(0.02em);
   }
 }
@@ -1208,7 +1244,7 @@ footer .footer_attention .footer_attention_right h6 {
   margin: 0 auto;
 }
 .page-top main article .fv .fv_group h1 {
-  padding: 16rem 0 1rem;
+  padding: 10rem 0 1rem;
   font-size: 60px;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -1216,12 +1252,13 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 1024px) {
   .page-top main article .fv .fv_group h1 {
-    font-size: 50px;
+    font-size: 48px;
   }
 }
 @media screen and (max-width: 768px) {
   .page-top main article .fv .fv_group h1 {
-    font-size: 42px;
+    font-size: 40px;
+    line-height: 1.25;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1243,14 +1280,19 @@ footer .footer_attention .footer_attention_right h6 {
   font-size: 20px;
   font-weight: lighter;
 }
+@media screen and (max-width: 1024px) {
+  .page-top main article .fv .fv_group h2 {
+    padding-bottom: 4rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .page-top main article .fv .fv_group h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
   .page-top main article .fv .fv_group h2 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 .page-top main article .fv .fv_group .fv_group_cta {
@@ -1266,12 +1308,12 @@ footer .footer_attention .footer_attention_right h6 {
 @media screen and (max-width: 1024px) {
   .page-top main article .fv .fv_group .fv_group_cta {
     width: 100%;
-    display: block;
   }
 }
 @media screen and (max-width: 768px) {
   .page-top main article .fv .fv_group .fv_group_cta {
     width: 100%;
+    display: block;
   }
 }
 .page-top main article .fv .fv_group .fv_group_cta h3 {
@@ -1296,14 +1338,14 @@ footer .footer_attention .footer_attention_right h6 {
   .page-top main article .fv .fv_group .fv_group_cta .fv_group_cta_button_white_a,
   .page-top main article .fv .fv_group .fv_group_cta .fv_group_cta_button_brightblue_a {
     font-size: 22px;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
 @media screen and (max-width: 768px) {
   .page-top main article .fv .fv_group .fv_group_cta .fv_group_cta_button_white_a,
   .page-top main article .fv .fv_group .fv_group_cta .fv_group_cta_button_brightblue_a {
-    font-size: 20px;
-    padding: 1rem 2rem;
+    font-size: 16px;
+    padding: 0.75rem 1.5rem;
   }
 }
 .page-top main article .fv .fv_group .fv_group_cta .fv_group_cta_button_white_a:hover,
@@ -1556,7 +1598,7 @@ footer .footer_attention .footer_attention_right h6 {
   justify-content: space-between;
   gap: 5%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .page-top main article #top_services .top_services_group {
     display: block;
     margin: 0 auto;
@@ -1589,7 +1631,7 @@ footer .footer_attention .footer_attention_right h6 {
   align-content: start;
   z-index: 5;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .page-top main article #top_services .top_services_group .top_services_group_leftbox .top_services_left_sticky {
     position: static;
     top: auto;
@@ -1640,7 +1682,7 @@ footer .footer_attention .footer_attention_right h6 {
   padding: 5%;
   box-sizing: border-box;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .page-top main article #top_services .top_services_group .top_services_group_rightbox {
     width: 90%;
     margin: 2rem auto 0;
@@ -1688,12 +1730,12 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 768px) {
   .page-top main article #top_services .top_services_group .top_services_group_rightbox .top_services_group_rightbox_item .top_services_group_rightbox_item_heading {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 480px) {
   .page-top main article #top_services .top_services_group .top_services_group_rightbox .top_services_group_rightbox_item .top_services_group_rightbox_item_heading {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .page-top main article #top_services .top_services_group .top_services_group_rightbox .top_services_group_rightbox_item .top_services_group_rightbox_item_txt {
@@ -1702,6 +1744,16 @@ footer .footer_attention .footer_attention_right h6 {
   line-height: 1.9;
   color: #252f66;
   opacity: 0.9;
+}
+@media screen and (max-width: 768px) {
+  .page-top main article #top_services .top_services_group .top_services_group_rightbox .top_services_group_rightbox_item .top_services_group_rightbox_item_txt {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-top main article #top_services .top_services_group .top_services_group_rightbox .top_services_group_rightbox_item .top_services_group_rightbox_item_txt {
+    font-size: 12px;
+  }
 }
 .page-top main article #top_works {
   width: 90%;
@@ -2070,6 +2122,12 @@ footer .footer_attention .footer_attention_right h6 {
     grid-area: title;
     width: 100%;
     justify-self: stretch;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-top main article #top_news .top_news_list .top_news_list_item .top_news_list_item_link .news-title {
+    font-size: 14px;
   }
 }
 .page-top main article #top_news .top_news_list .top_news_list_item .top_news_list_item_link .news_body p {
@@ -2184,7 +2242,12 @@ footer .footer_attention .footer_attention_right h6 {
     width: 90%;
     margin: 2rem auto 0;
     padding-left: 0;
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .page-top main article #top_career p {
+    font-size: 12px;
   }
 }
 .page-top main article #top_career .marquee-right {
@@ -2363,6 +2426,12 @@ footer .footer_attention .footer_attention_right h6 {
 @media screen and (max-width: 768px) {
   .page-top main article #top_panel .top_panel_a .top_panel_a_item p {
     margin-bottom: 0;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-top main article #top_panel .top_panel_a .top_panel_a_item p {
+    font-size: 12px;
   }
 }
 .page-top main article #top_panel .top_panel_a .top_panel_a_item .top_panel_a_item_arrow {
@@ -2818,12 +2887,13 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 768px) {
   .page-services #services .services_container .services_container_item .services_container_item_inner .services_container_item_inner_txt span {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
   .page-services #services .services_container .services_container_item .services_container_item_inner .services_container_item_inner_txt span {
-    font-size: 16px;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
   }
 }
 .page-services #services .services_container .services_container_item .services_container_item_inner .services_container_item_inner_txt ul li {
@@ -2946,7 +3016,12 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 768px) {
   .page-services #services_faq .services_faq_container .content p {
-    font-size: 1rem;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-services #services_faq .services_faq_container .content p {
+    font-size: 12px;
   }
 }
 .page-services #services_faq .services_faq_container .toggle:checked + .Label + .content {
