@@ -679,6 +679,7 @@ footer .footer_container {
 }
 @media screen and (max-width: 1024px) {
   footer .footer_container {
+    width: 80%;
     display: block;
   }
 }
@@ -691,17 +692,17 @@ footer .footer_container {
 footer .footer_container_leftgroup {
   width: 28%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   footer .footer_container_leftgroup {
     display: block;
-    width: 100%;
+    width: 80%;
   }
 }
 @media screen and (max-width: 480px) {
   footer .footer_container_leftgroup {
+    width: 100%;
     display: block;
     padding-bottom: 2rem;
-    width: 100%;
   }
 }
 footer .footer_container_leftgroup img {
@@ -711,6 +712,7 @@ footer .footer_container_leftgroup img {
   margin-bottom: 1.5rem;
 }
 footer .footer_container_leftgroup h5 {
+  width: 100%;
   margin: 0 0 0.7rem;
   font-size: 1rem;
   font-weight: 800;
@@ -1884,12 +1886,12 @@ footer .footer_attention .footer_attention_right h6 {
   }
 }
 .page-top main article #top_works .top_works_mainitem a .top_works_mainitem_txtgroup h4 {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
   .page-top main article #top_works .top_works_mainitem a .top_works_mainitem_txtgroup h4 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2801,7 +2803,7 @@ footer .footer_attention .footer_attention_right h6 {
 }
 .page-company main article #company_accessmap .company_accessmap_container .company_accessmap_container_txt .company_accessmap_container_txt_item h6 {
   margin-bottom: 0.75rem;
-  font-size: 24px;
+  font-size: 20px;
   color: #252f66;
 }
 @media screen and (max-width: 768px) {
@@ -2815,17 +2817,17 @@ footer .footer_attention .footer_attention_right h6 {
   }
 }
 .page-company main article #company_accessmap .company_accessmap_container .company_accessmap_container_txt .company_accessmap_container_txt_item p {
-  font-size: 20px;
-  line-height: 1.25;
+  font-size: 16px;
+  line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
   .page-company main article #company_accessmap .company_accessmap_container .company_accessmap_container_txt .company_accessmap_container_txt_item p {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 480px) {
   .page-company main article #company_accessmap .company_accessmap_container .company_accessmap_container_txt .company_accessmap_container_txt_item p {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -3043,6 +3045,7 @@ footer .footer_attention .footer_attention_right h6 {
   font-size: 1.2rem;
   line-height: 1.2;
   color: #2c3e50;
+  line-height: 1.75;
 }
 @media screen and (max-width: 768px) {
   .page-services #services_faq .services_faq_container .content p {

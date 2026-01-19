@@ -477,6 +477,7 @@ footer {
     gap: 6%;
     padding-bottom: 3rem;
     @include mq(pc) {
+      width: 80%;
       display: block;
     }
     @include mq(sp) {
@@ -487,14 +488,15 @@ footer {
   // フッター左ブロック
   .footer_container_leftgroup {
     width: 28%;
-    @include mq(tab) {
+    @include mq(pc) {
       display: block;
-      width: 100%;
+      width: 80%;
+      // margin: 0 auto 2rem;
     }
     @include mq(sp) {
+      width: 100%;
       display: block;
       padding-bottom: 2rem;
-      width: 100%;
     }
     img {
       max-width: 180px;
@@ -503,6 +505,7 @@ footer {
       margin-bottom: 1.5rem;
     }
     h5 {
+      width: 100%;
       margin: 0 0 0.7rem;
       font-size: 1rem;
       font-weight: 800;
@@ -1437,10 +1440,10 @@ footer {
                 width: 100%;
               }
               & h4 {
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 1.5;
                 @include mq(tab) {
-                  font-size: 20px;
+                  font-size: 18px;
                 }
                 @include mq(sp) {
                   font-size: 14px;
@@ -2158,7 +2161,7 @@ footer {
               margin-bottom: 3rem;
               & h6 {
                 margin-bottom: 0.75rem;
-                font-size: 24px;
+                font-size: 20px;
                 color: $navy;
                 @include mq(tab) {
                   font-size: 20px;
@@ -2168,13 +2171,13 @@ footer {
                 }
               }
               & p {
-                font-size: 20px;
-                line-height: 1.25;
+                font-size: 16px;
+                line-height: 1.5;
                 @include mq(tab) {
-                  font-size: 16px;
+                  font-size: 14px;
                 }
                 @include mq(sp) {
-                  font-size: 14px;
+                  font-size: 12px;
                 }
               }
             }
@@ -2365,6 +2368,7 @@ footer {
         font-size: 1.2rem;
         line-height: 1.2;
         color: $font_basic;
+        line-height: 1.75;
         @include mq(tab) {
           font-size: 14px;
         }
