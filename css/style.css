@@ -174,7 +174,8 @@ li {
   list-style: none;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -339,11 +340,16 @@ body {
   }
 }
 
+:root {
+  --header-h: 72px;
+}
+
 header {
+  height: var(--header-h);
   box-sizing: border-box;
   align-items: center;
   gap: 3rem;
-  padding: 0.3rem 0;
+  padding: 0;
   position: relative;
   position: fixed;
   top: 0;
@@ -354,9 +360,13 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 header .header_inner {
   width: 95%;
+  height: 100%;
+  display: flex;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -365,15 +375,22 @@ header .header_inner {
   position: relative;
 }
 header .header_inner .title {
-  width: 12.5%;
+  width: 15%;
 }
 @media screen and (max-width: 768px) {
   header .header_inner .title {
     width: 20%;
   }
 }
+@media screen and (max-width: 480px) {
+  header .header_inner .title {
+    width: 30%;
+  }
+}
 header .header_inner .title a img {
   width: 100%;
+  display: block;
+  object-fit: cover;
 }
 header .header_inner .header_wrap {
   width: 60%;
@@ -386,7 +403,7 @@ header .header_inner .header_wrap {
   header .header_inner .header_wrap {
     width: 60%;
     display: block;
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -403,10 +420,12 @@ header .header_inner .header_wrap .header_wrap_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list {
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 @media screen and (max-width: 1024px) {
   header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list {
@@ -1115,16 +1134,12 @@ footer .footer_attention .footer_attention_right h6 {
   transform: translateX(4px);
 }
 
-.viewbutton_a .icon {
-  font-size: 0;
-}
-
 .viewbutton_a:hover .icon {
   transform: translateX(2px);
 }
 
 .viewbutton_a:hover .icon::before {
-  transform: translateX(4px);
+  transform: translate(4px, 0.02em);
 }
 
 /* Back to List ボタン */
@@ -1241,9 +1256,8 @@ footer .footer_attention .footer_attention_right h6 {
   color: #333333;
 }
 .page-top main article .fv {
-  height: 100vh;
-  padding-top: 80px;
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - var(--header-h)); /* fallback */
+  height: calc(100dvh - var(--header-h)); /* 新しいブラウザはこっち */
   background-attachment: fixed;
   background-position: center;
   background-size: cover;

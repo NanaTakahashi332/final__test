@@ -2,7 +2,8 @@
 
 // =====全ページ共通====
 // スムーススクロール
-html {
+html,
+body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -170,11 +171,16 @@ body {
 }
 
 // ヘッダー
+:root {
+  --header-h: 72px;
+}
 header {
+  height: var(--header-h);
   box-sizing: border-box;
   align-items: center;
   gap: 3rem;
-  padding: 0.3rem 0;
+  // padding: 0.3rem 0;
+  padding: 0;
   position: relative;
   position: fixed;
   top: 0;
@@ -185,21 +191,30 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  display: flex;
+  align-items: center;
   .header_inner {
     width: 95%;
+    height: 100%;
+    display: flex;
     margin: 0 auto;
     @include flex_between;
     align-items: center;
     gap: 3rem;
     position: relative;
     .title {
-      width: 12.5%;
+      width: 15%;
       @include mq(tab) {
         width: 20%;
+      }
+      @include mq(sp) {
+        width: 30%;
       }
       a {
         img {
           width: 100%;
+          display: block;
+          object-fit: cover;
         }
       }
     }
@@ -212,7 +227,7 @@ header {
       @include mq(pc) {
         width: 60%;
         display: block;
-        font-size: 9px;
+        font-size: 10px;
       }
       @include mq(tab) {
         display: none;
@@ -223,9 +238,11 @@ header {
       .header_wrap_nav {
         @include flex_between;
         align-items: center;
+        margin: 0;
+        padding: 0;
         .header_wrap_nav_list {
           display: inline-block;
-          margin: 0 1rem;
+          margin: 0 0.5rem;
           @include mq(pc) {
             margin: 0 0.5rem;
           }
@@ -820,14 +837,13 @@ footer {
 .viewbutton_a:hover .icon::before {
   transform: translateX(4px);
 }
-.viewbutton_a .icon {
-  font-size: 0;
-}
+
 .viewbutton_a:hover .icon {
   transform: translateX(2px);
 }
 .viewbutton_a:hover .icon::before {
-  transform: translateX(4px);
+  // transform: translateX(4px);
+  transform: translate(4px, 0.02em);
 }
 
 /* Back to List ボタン */
@@ -942,11 +958,9 @@ footer {
   main {
     article {
       .fv {
-        // display: block;
-        height: 100vh;
-        padding-top: 80px; // ヘッダー高さに合わせて調整
-        min-height: calc(100vh - 80px);
-        // min-height: 100vh;
+        // --header-h: 80px; // ヘッダー高さ（必要なら後で調整）
+        height: calc(100vh - var(--header-h)); /* fallback */
+        height: calc(100dvh - var(--header-h)); /* 新しいブラウザはこっち */
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
@@ -954,8 +968,8 @@ footer {
         background-image: url("../img/top/fv.png");
         color: $white;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center; // 横方向（containerを中央寄せ）
+        align-items: center; // ★縦方向中央
         .fv_group {
           @include container;
           // width: 100%;
