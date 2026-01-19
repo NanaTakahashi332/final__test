@@ -3520,6 +3520,7 @@ footer .footer_attention .footer_attention_right h6 {
 }
 .page-career #career_mid .career_mid_container table {
   border-collapse: collapse;
+  width: 100%;
 }
 .page-career #career_mid .career_mid_container table th,
 .page-career #career_mid .career_mid_container table td {
@@ -3527,6 +3528,7 @@ footer .footer_attention .footer_attention_right h6 {
   border: 1px solid #c0c0c0;
   line-height: 1.5;
   text-align: left;
+  letter-spacing: 0.05em;
 }
 @media screen and (max-width: 480px) {
   .page-career #career_mid .career_mid_container table th,
@@ -3537,6 +3539,10 @@ footer .footer_attention .footer_attention_right h6 {
 .page-career #career_mid .career_mid_container table th {
   background-color: #ebe8ef;
   font-weight: 100;
+  width: 15%;
+}
+.page-career #career_mid .career_mid_container table td {
+  width: 85%;
 }
 .page-career #career_fresh {
   width: 90%;

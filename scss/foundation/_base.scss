@@ -2782,12 +2782,14 @@ footer {
       }
       table {
         border-collapse: collapse;
+        width: 100%;
         th,
         td {
           padding: 1rem;
           border: 1px solid #c0c0c0;
           line-height: 1.5;
           text-align: left;
+          letter-spacing: 0.05em;
           @include mq(sp) {
             font-size: 12px;
           }
@@ -2795,6 +2797,10 @@ footer {
         th {
           background-color: $weak_gray;
           font-weight: 100;
+          width: 15%;
+        }
+        td {
+          width: 85%;
         }
       }
     }
