@@ -376,16 +376,17 @@ header .header_inner .title a img {
   width: 100%;
 }
 header .header_inner .header_wrap {
-  width: 75%;
+  width: 60%;
   display: block;
   transition: all 0.5s ease-in-out;
   text-align: center;
+  font-size: 14px;
 }
 @media screen and (max-width: 1024px) {
   header .header_inner .header_wrap {
-    width: 100%;
+    width: 60%;
     display: block;
-    font-size: 12px;
+    font-size: 9px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -407,9 +408,14 @@ header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list {
   display: inline-block;
   margin: 0 1rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list {
     margin: 0 0.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list {
+    margin: 0 0.25rem;
   }
 }
 header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list_a {
@@ -446,6 +452,11 @@ header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list_a.butto
   justify-content: center;
   border: 1.5px solid transparent;
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+@media screen and (max-width: 1024px) {
+  header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list_a.button_contact {
+    padding: 0.5rem 0.75rem;
+  }
 }
 header .header_inner .header_wrap .header_wrap_nav .header_wrap_nav_list_a.button_contact::after {
   content: none;
@@ -1230,21 +1241,26 @@ footer .footer_attention .footer_attention_right h6 {
   color: #333333;
 }
 .page-top main article .fv {
-  display: block;
   height: 100vh;
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../img/top/fv.png");
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .page-top main article .fv .fv_group {
   width: 90%;
   margin: 0 auto;
 }
 .page-top main article .fv .fv_group h1 {
-  padding: 10rem 0 1rem;
+  padding: 0;
+  margin: 0 0 1rem;
   font-size: 60px;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -1263,7 +1279,6 @@ footer .footer_attention .footer_attention_right h6 {
 }
 @media screen and (max-width: 480px) {
   .page-top main article .fv .fv_group h1 {
-    padding: 12rem 0 1rem;
     font-size: 30px;
   }
 }
@@ -1276,7 +1291,8 @@ footer .footer_attention .footer_attention_right h6 {
   }
 }
 .page-top main article .fv .fv_group h2 {
-  padding-bottom: 8rem;
+  padding-bottom: 0;
+  margin: 0 0 3rem;
   font-size: 20px;
   font-weight: lighter;
 }

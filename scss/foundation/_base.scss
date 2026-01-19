@@ -204,14 +204,15 @@ header {
       }
     }
     .header_wrap {
-      width: 75%;
+      width: 60%;
       display: block;
       transition: all 0.5s ease-in-out;
       text-align: center;
+      font-size: 14px;
       @include mq(pc) {
-        width: 100%;
+        width: 60%;
         display: block;
-        font-size: 12px;
+        font-size: 9px;
       }
       @include mq(tab) {
         display: none;
@@ -225,8 +226,11 @@ header {
         .header_wrap_nav_list {
           display: inline-block;
           margin: 0 1rem;
-          @include mq(tab) {
+          @include mq(pc) {
             margin: 0 0.5rem;
+          }
+          @include mq(tab) {
+            margin: 0 0.25rem;
           }
         }
         .header_wrap_nav_list_a {
@@ -272,6 +276,9 @@ header {
             border-color 0.4s ease,
             opacity 0.4s ease,
             transform 0.4s ease;
+          @include mq(pc) {
+            padding: 0.5rem 0.75rem;
+          }
           &::after {
             content: none;
           }
@@ -935,19 +942,28 @@ footer {
   main {
     article {
       .fv {
-        display: block;
+        // display: block;
         height: 100vh;
+        padding-top: 80px; // ヘッダー高さに合わせて調整
+        min-height: calc(100vh - 80px);
+        // min-height: 100vh;
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url("../img/top/fv.png");
         color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .fv_group {
           @include container;
+          // width: 100%;
           h1 {
-            // padding: 16rem 0 1rem;
-            padding: 10rem 0 1rem;
+            // 上下中央寄せのためpadding-topは無し
+            // padding: 10rem 0 1rem;
+            padding: 0;
+            margin: 0 0 1rem;
             font-size: 60px;
             line-height: 1.5;
             letter-spacing: 0.1em;
@@ -960,7 +976,7 @@ footer {
               line-height: 1.25;
             }
             @include mq(sp) {
-              padding: 12rem 0 1rem;
+              // padding: 12rem 0 1rem;
               font-size: 30px;
             }
             .fv_group_sponly {
@@ -971,7 +987,9 @@ footer {
             }
           }
           h2 {
-            padding-bottom: 8rem;
+            // padding-bottom: 8rem;
+            padding-bottom: 0;
+            margin: 0 0 3rem;
             font-size: 20px;
             font-weight: lighter;
             @include mq(pc) {
